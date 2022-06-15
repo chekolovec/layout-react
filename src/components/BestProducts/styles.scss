@@ -1,0 +1,33 @@
+@import "../../variables.scss";
+
+.selling {
+  &-products {
+    margin: 0 12px;
+    background-color: $white;
+    box-shadow: 0 1px 2px rgb(56 65 74 / 15%);
+    border-radius: 5px;
+    flex: 1;
+    margin-bottom: 24px;
+  }
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    align-items: center;
+    &-text {
+      color: $breadcrumb-second;
+    }
+    &-item {
+      padding: 4px 8px;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      &:hover {
+        background-color: $pagination-hover;
+      }
+      &.active {
+        background-color: $link;
+        color: $white;
+      }
+    }
+  }
+}

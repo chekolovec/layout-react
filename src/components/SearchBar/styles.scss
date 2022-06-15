@@ -1,0 +1,51 @@
+@import "../../variables.scss";
+
+.burger {
+  &-wrapper {
+    padding-right: 16px;
+    cursor: pointer;
+    &:hover {
+      .burger-line {
+        margin: 4px 0;
+      }
+    }
+  }
+  &-line {
+    height: 2px;
+    border-radius: 5px;
+    background-color: $burger;
+    margin: 3px 0;
+    &:nth-child(1) {
+      width: 16px;
+    }
+    &:nth-child(2) {
+      width: 20px;
+    }
+    &:nth-child(3) {
+      width: 10px;
+    }
+  }
+}
+
+.header {
+  .search {
+    &-wrapper {
+      background-color: $search;
+      display: flex;
+      flex-direction: row;
+      padding: 0 10px;
+      align-items: center;
+      border-radius: 5px;
+      height: 38px;
+    }
+    &-icon {
+      padding-right: 10px;
+      color: $burger;
+    }
+    &-input {
+      background-color: $search;
+      outline: none;
+      font-size: 14px;
+    }
+  }
+}

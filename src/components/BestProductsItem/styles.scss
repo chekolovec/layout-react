@@ -1,0 +1,49 @@
+@import "../../variables.scss";
+
+.selling {
+  .product {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1.5fr 1fr;
+    padding: 12px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+    &-name {
+      display: flex;
+      align-items: center;
+      .product-info-value {
+        color: $black;
+      }
+    }
+    &-img {
+      width: 40px;
+      height: 40px;
+      &-container {
+        padding: 4px;
+        background-color: rgb(243, 246, 249);
+        margin-right: 10px;
+        border-radius: 3px;
+      }
+    }
+    &-info {
+      &-value {
+        font-size: 14px;
+        font-weight: 400;
+        color: $header-button;
+      }
+      &-name {
+        color: $breadcrumb-second;
+      }
+      &-out {
+        color: $notification-counter;
+        background-color: rgba(240, 101, 72, 0.1);
+        padding: 3px 6px;
+        border-radius: 3px;
+        font-size: 10px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

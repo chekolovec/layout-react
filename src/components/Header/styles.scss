@@ -1,0 +1,157 @@
+@import "../../variables.scss";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 24px 0 15px;
+  border-bottom: 1px solid $border-color;
+  &-wrapper-left {
+    padding: 16px 28px 16px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &-wrapper-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &-buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 16px;
+  }
+  &-button {
+    width: 20px;
+    height: 20px;
+    color: $header-button;
+    &-language {
+      border-radius: 5px;
+    }
+    &-container {
+      position: relative;
+    }
+    &-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 100%;
+      .counter {
+        color: $white;
+        &-wrapper {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 0 6px 2px 6px;
+          border-radius: 100%;
+          line-height: 1;
+          .counter {
+            font-size: 9px;
+          }
+          &.cart {
+            background-color: $cart-counter;
+          }
+          &.notification {
+            background-color: $notification-counter;
+          }
+        }
+      }
+      &:hover {
+        background-color: $button-hover;
+        .header-button {
+          color: $blue;
+        }
+      }
+    }
+  }
+  &-profile {
+    &-container {
+      height: 100%;
+    }
+    &-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 14px;
+      height: 100%;
+      background-color: $header-profile;
+    }
+    &-image {
+      width: 32px;
+      height: 32px;
+      border-radius: 100%;
+    }
+    &-info {
+      padding-left: 10px;
+    }
+    &-name {
+      font-weight: 500;
+      color: $header-button;
+    }
+    &-position {
+      color: $burger;
+      font-size: 12px;
+      text-align: left;
+    }
+  }
+  .profile-modal {
+    position: absolute;
+    padding: 8px 0;
+    right: 24px;
+    background-color: $white;
+    z-index: 100;
+    box-shadow: 0 5px 10px rgb(30 32 37 / 12%);
+    display: none;
+    &.active {
+      display: block;
+    }
+    &-title {
+      color: $neutral;
+      padding: 8px 19px;
+      font-weight: 500;
+    }
+    .menu {
+      &-list {
+        width: 100%;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $border-color;
+        &-bottom {
+          width: 100%;
+          padding-top: 10px;
+        }
+      }
+      &-item {
+        padding: 5px 19px;
+        color: $modal-link;
+        display: block;
+        cursor: pointer;
+        &-text {
+          padding-left: 5px;
+        }
+        &-button {
+          padding: 3px 6px;
+          background-color: rgba(10, 179, 156, 0.18);
+          float: right;
+          font-size: 9px;
+          color: $success;
+          font-weight: 600;
+          border-radius: 3px;
+        }
+        &:hover {
+          background-color: $link-hover;
+        }
+        i {
+          color: $neutral;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
