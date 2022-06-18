@@ -1,5 +1,6 @@
 import React from "react";
 import { BestProductsItem } from "../BestProductsItem";
+import { Pagination } from "../Pagination";
 import "./styles.scss";
 
 const PRODUCTS = [
@@ -42,16 +43,16 @@ const PRODUCTS = [
 
 export const BestProducts = () => {
   return (
-    <section class="selling-products">
-      <div class="content-title-container flex-container">
-        <h6 class="title">Best Selling Products</h6>
-        <button class="sort">
-          <span class="sort-text">SORT BY: </span>
-          <span class="sort-value">Today</span>
-          <i class="mdi mdi-chevron-down ms-1"></i>
+    <section className="selling-products">
+      <div className="content-title-container flex-container">
+        <h6 className="title">Best Selling Products</h6>
+        <button className="sort">
+          <span className="sort-text">SORT BY: </span>
+          <span className="sort-value">Today</span>
+          <i className="mdi mdi-chevron-down ms-1"></i>
         </button>
       </div>
-      <ul class="selling-products-content">
+      <ul className="selling-products-content">
         {PRODUCTS.map(({ name, price, amount, outOfStock, date }, index) => (
           <BestProductsItem
             name={name}
@@ -63,18 +64,7 @@ export const BestProducts = () => {
           />
         ))}
       </ul>
-      <div class="pagination">
-        <span class="pagination-text">
-          Showing <b>5</b> of <b>25</b> Results
-        </span>
-        <div class="pagination-items">
-          <button class="pagination-item">←</button>
-          <button class="pagination-item">1</button>
-          <button class="pagination-item active">2</button>
-          <button class="pagination-item">3</button>
-          <button class="pagination-item">→</button>
-        </div>
-      </div>
+      <Pagination itemsNumber={5} totalNumber={25} current={2} last={5} />
     </section>
   );
 };

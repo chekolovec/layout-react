@@ -7,38 +7,4 @@
   box-shadow: 0 1px 2px rgb(56 65 74 / 15%);
   border-radius: 5px;
   margin-bottom: 24px;
-  &-item {
-    padding: 12px;
-    display: grid;
-    grid-template-columns: 2.5fr 2fr 1fr 1fr 0.5fr 0.5fr;
-    border-bottom: 1px solid $border-color;
-  }
-  &-img {
-    width: 32px;
-    height: 32px;
-    &-container {
-      padding: 8px;
-    }
-  }
-  &-name {
-    display: flex;
-    align-items: center;
-  }
-  &-info {
-    &-container {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-    }
-    &-name {
-      color: $breadcrumb-second;
-    }
-    &-link {
-      text-decoration: none;
-      color: $black;
-    }
-    &-icon {
-      color: $success;
-    }
-  }
 }

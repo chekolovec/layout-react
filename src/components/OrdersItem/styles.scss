@@ -1,0 +1,54 @@
+@import "../../variables.scss";
+
+.orders {
+  .order {
+    &-id {
+      color: $link;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    &-customer {
+      display: flex;
+      align-items: center;
+      &-img {
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+      }
+      &-name {
+        flex-grow: 1;
+        padding-left: 5px;
+      }
+    }
+    &-amount {
+      color: $success;
+    }
+    &-status {
+      padding: 3px 6px;
+      font-size: 10px;
+      font-weight: 600;
+      border-radius: 3px;
+      &.success {
+        color: $success;
+        background-color: rgba(10, 179, 156, 0.1);
+      }
+      &.pending {
+        background-color: rgba(247, 184, 75, 0.1);
+        color: $pending;
+      }
+      &.unpaid {
+        background-color: rgba(240, 101, 72, 0.1);
+        color: $notification-counter;
+      }
+    }
+    &-rating {
+      &-container {
+        font-weight: 500;
+      }
+    }
+    &-votes {
+      color: $breadcrumb-second;
+      font-size: 11px;
+    }
+  }
+}

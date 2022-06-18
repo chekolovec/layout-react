@@ -10,35 +10,35 @@ export const BestProductsItem = ({
   outOfStock,
 }) => {
   return (
-    <li class="product">
-      <div class="product-name">
-        <div class="product-img-container">
+    <li className="product">
+      <div className="product-name">
+        <div className="product-img-container">
           <img
             src="./assets/images/product.png"
             alt="Product"
-            class="product-img"
+            className="product-img"
           />
         </div>
-        <div class="product-info-container">
-          <p class="product-info-value">{name}</p>
-          <p class="product-info-name">{date}</p>
+        <div className="product-info-container">
+          <p className="product-info-value">{name}</p>
+          <p className="product-info-name">{date}</p>
         </div>
       </div>
-      <div class="product-info-container">
-        <p class="product-info-value">{price}</p>
-        <p class="product-info-name">Price</p>
+      <div className="product-info-container">
+        <p className="product-info-value">{price}</p>
+        <p className="product-info-name">Price</p>
       </div>
-      <div class="product-info-container">
+      <div className="product-info-container">
         {outOfStock ? (
-          <span class="product-info-out">Out of stock</span>
+          <span className="product-info-out">Out of stock</span>
         ) : (
-          <p class="product-info-value">{stock}</p>
+          <p className="product-info-value">{stock}</p>
         )}
-        <p class="product-info-name">Stock</p>
+        <p className="product-info-name">Stock</p>
       </div>
-      <div class="product-info-container">
-        <p class="product-info-value">{amount}</p>
-        <p class="product-info-name">Amount</p>
+      <div className="product-info-container">
+        <p className="product-info-value">{amount}</p>
+        <p className="product-info-name">Amount</p>
       </div>
     </li>
   );

@@ -1,18 +1,77 @@
 import React from "react";
+import { OrdersItem } from "../OrdersItem";
 import "./styles.scss";
+
+const DATA = [
+  {
+    id: "#VZ2112",
+    name: "Alex Smith",
+    img: "./assets/images/avatar.jpeg",
+    product: "Clothes",
+    price: "$109.00",
+    vendor: "Zoetic Fashion",
+    status: "Paid",
+    rating: "5.0",
+    votes: "61",
+  },
+  {
+    id: "#VZ2112",
+    name: "Alex Smith",
+    img: "./assets/images/avatar.jpeg",
+    product: "Clothes",
+    price: "$109.00",
+    vendor: "Zoetic Fashion",
+    status: "Pending",
+    rating: "5.0",
+    votes: "61",
+  },
+  {
+    id: "#VZ2112",
+    name: "Alex Smith",
+    img: "./assets/images/avatar.jpeg",
+    product: "Clothes",
+    price: "$109.00",
+    vendor: "Zoetic Fashion",
+    status: "Paid",
+    rating: "5.0",
+    votes: "61",
+  },
+  {
+    id: "#VZ2112",
+    name: "Alex Smith",
+    img: "./assets/images/avatar.jpeg",
+    product: "Clothes",
+    price: "$109.00",
+    vendor: "Zoetic Fashion",
+    status: "Unpaid",
+    rating: "5.0",
+    votes: "61",
+  },
+  {
+    id: "#VZ2112",
+    name: "Alex Smith",
+    img: "./assets/images/avatar.jpeg",
+    product: "Clothes",
+    price: "$109.00",
+    vendor: "Zoetic Fashion",
+    status: "Paid",
+    rating: "5.0",
+    votes: "61",
+  },
+];
 
 export const Orders = () => {
   return (
-    <section class="orders">
-      <div class="content-title-container flex-container">
-        <h6 class="title">Recent Orders</h6>
-        <button class="generate">
-          <i class="ri-file-list-3-line align-middle"></i>
-          <span class="generate-text">Generate Report</span>
+    <section className="orders">
+      <div className="content-title-container flex-container">
+        <h6 className="title">Recent Orders</h6>
+        <button className="generate">
+          <i className="ri-file-list-3-line align-middle"></i>
+          <span className="generate-text">Generate Report</span>
         </button>
       </div>
-      <div class="orders-table-container">
-        <table class="orders-table">
+      <div className="orders-table-container">
+        <table className="orders-table">
           <thead>
             <tr>
               <th>Order ID</th>
@@ -25,186 +84,35 @@ export const Orders = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <a href="/" class="order-id">
-                  {" "}
-                  #VZ2112{" "}
-                </a>
-              </td>
-              <td>
-                <div class="order-customer">
-                  <img
-                    src="./assets/images/avatar.jpeg"
-                    alt="Customer avatar"
-                    class="order-customer-img"
-                  />
-                  <span class="order-customer-name">Alex Smith</span>
-                </div>
-              </td>
-              <td>
-                <span class="order-product">Clothes</span>
-              </td>
-              <td>
-                <span class="order-amount">$109.00</span>
-              </td>
-              <td>
-                <span class="order-vendor">Zoetic Fashion</span>
-              </td>
-              <td>
-                <span class="order-status success">Paid</span>
-              </td>
-              <td>
-                <div class="order-rating-container">
-                  <span class="order-rating">5.0</span>
-                  <span class="order-votes">(61 votes)</span>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="/" class="order-id">
-                  {" "}
-                  #VZ2112{" "}
-                </a>
-              </td>
-              <td>
-                <div class="order-customer">
-                  <img
-                    src="./assets/images/avatar.jpeg"
-                    alt="Customer avatar"
-                    class="order-customer-img"
-                  />
-                  <span class="order-customer-name">Alex Smith</span>
-                </div>
-              </td>
-              <td>
-                <span class="order-product">Clothes</span>
-              </td>
-              <td>
-                <span class="order-amount">$109.00</span>
-              </td>
-              <td>
-                <span class="order-vendor">Zoetic Fashion</span>
-              </td>
-              <td>
-                <span class="order-status pending">Pending</span>
-              </td>
-              <td>
-                <div class="order-rating-container">
-                  <span class="order-rating">5.0</span>
-                  <span class="order-votes">(61 votes)</span>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="/" class="order-id">
-                  {" "}
-                  #VZ2112{" "}
-                </a>
-              </td>
-              <td>
-                <div class="order-customer">
-                  <img
-                    src="./assets/images/avatar.jpeg"
-                    alt="Customer avatar"
-                    class="order-customer-img"
-                  />
-                  <span class="order-customer-name">Alex Smith</span>
-                </div>
-              </td>
-              <td>
-                <span class="order-product">Clothes</span>
-              </td>
-              <td>
-                <span class="order-amount">$109.00</span>
-              </td>
-              <td>
-                <span class="order-vendor">Zoetic Fashion</span>
-              </td>
-              <td>
-                <span class="order-status success">Paid</span>
-              </td>
-              <td>
-                <div class="order-rating-container">
-                  <span class="order-rating">5.0</span>
-                  <span class="order-votes">(61 votes)</span>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="/" class="order-id">
-                  {" "}
-                  #VZ2112{" "}
-                </a>
-              </td>
-              <td>
-                <div class="order-customer">
-                  <img
-                    src="./assets/images/avatar.jpeg"
-                    alt="Customer avatar"
-                    class="order-customer-img"
-                  />
-                  <span class="order-customer-name">Alex Smith</span>
-                </div>
-              </td>
-              <td>
-                <span class="order-product">Clothes</span>
-              </td>
-              <td>
-                <span class="order-amount">$109.00</span>
-              </td>
-              <td>
-                <span class="order-vendor">Zoetic Fashion</span>
-              </td>
-              <td>
-                <span class="order-status unpaid">Unpaid</span>
-              </td>
-              <td>
-                <div class="order-rating-container">
-                  <span class="order-rating">5.0</span>
-                  <span class="order-votes">(61 votes)</span>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="/" class="order-id">
-                  {" "}
-                  #VZ2112{" "}
-                </a>
-              </td>
-              <td>
-                <div class="order-customer">
-                  <img
-                    src="./assets/images/avatar.jpeg"
-                    alt="Customer avatar"
-                    class="order-customer-img"
-                  />
-                  <span class="order-customer-name">Alex Smith</span>
-                </div>
-              </td>
-              <td>
-                <span class="order-product">Clothes</span>
-              </td>
-              <td>
-                <span class="order-amount">$109.00</span>
-              </td>
-              <td>
-                <span class="order-vendor">Zoetic Fashion</span>
-              </td>
-              <td>
-                <span class="order-status success">Paid</span>
-              </td>
-              <td>
-                <div class="order-rating-container">
-                  <span class="order-rating">5.0</span>
-                  <span class="order-votes">(61 votes)</span>
-                </div>
-              </td>
-            </tr>
+            {DATA.map(
+              (
+                {
+                  id,
+                  name,
+                  img,
+                  product,
+                  price,
+                  vendor,
+                  status,
+                  rating,
+                  votes,
+                },
+                index
+              ) => (
+                <OrdersItem
+                  id={id}
+                  name={name}
+                  img={img}
+                  product={product}
+                  price={price}
+                  vendor={vendor}
+                  status={status}
+                  rating={rating}
+                  votes={votes}
+                  key={index}
+                />
+              )
+            )}
           </tbody>
         </table>
       </div>
