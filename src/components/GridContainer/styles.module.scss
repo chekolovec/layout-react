@@ -1,0 +1,7 @@
+@import "../../variables.scss";
+
+.default {
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}

@@ -1,12 +1,15 @@
 import React, { useState } from "react";
+import { Button, BUTTON_VARIANTS } from "../Button";
+import { Container, CONTAINER_VARIANTS } from "../Container";
+import { ModalContainer } from "../ModalContainer";
 import "./styles.scss";
 
 export const Language = () => {
   const [modalShown, toggleModal] = useState(false);
   return (
-    <div className="header-button-container">
-      <button
-        className="header-button-wrapper"
+    <Container variant={CONTAINER_VARIANTS.relative}>
+      <Button
+        variant={BUTTON_VARIANTS.icon}
         onClick={() => toggleModal(!modalShown)}
       >
         <img
@@ -14,67 +17,53 @@ export const Language = () => {
           height="20"
           src="../assets/images/flag.svg"
           alt="country"
-          className="header-button-language"
+          className="language-img"
         />
-      </button>
-      <div className={`language-popup-container ${modalShown ? "active" : ""}`}>
-        <button className="language-popup-item">
-          <img
-            src="./assets/images/flag.svg"
-            alt="Flag"
-            className="language-popup-flag"
-          />
-          <span className="language-name">English</span>
-        </button>
-        <button className="language-popup-item">
-          <img
-            src="./assets/images/spain.svg"
-            alt="Flag"
-            className="language-popup-flag"
-          />
-          <span className="language-name">Española</span>
-        </button>
-        <button className="language-popup-item">
-          <img
-            src="./assets/images/germany.svg"
-            alt="Flag"
-            className="language-popup-flag"
-          />
-          <span className="language-name">Deutsche</span>
-        </button>
-        <button className="language-popup-item">
-          <img
-            src="./assets/images/italy.svg"
-            alt="Flag"
-            className="language-popup-flag"
-          />
-          <span className="language-name">Italiana</span>
-        </button>
-        <button className="language-popup-item">
-          <img
-            src="./assets/images/russia.svg"
-            alt="Flag"
-            className="language-popup-flag"
-          />
-          <span className="language-name">русский</span>
-        </button>
-        <button className="language-popup-item">
-          <img
-            src="./assets/images/china.svg"
-            alt="Flag"
-            className="language-popup-flag"
-          />
-          <span className="language-name">中国人</span>
-        </button>
-        <button className="language-popup-item">
-          <img
-            src="./assets/images/french.svg"
-            alt="Flag"
-            className="language-popup-flag"
-          />
-          <span className="language-name">français</span>
-        </button>
-      </div>
-    </div>
+      </Button>
+      <ModalContainer active={modalShown} width={160}>
+        <Button
+          imgSrc="./assets/images/flag.svg"
+          variant={BUTTON_VARIANTS.list}
+        >
+          English
+        </Button>
+        <Button
+          imgSrc="./assets/images/spain.svg"
+          variant={BUTTON_VARIANTS.list}
+        >
+          Española
+        </Button>
+        <Button
+          imgSrc="./assets/images/germany.svg"
+          variant={BUTTON_VARIANTS.list}
+        >
+          Deutsche
+        </Button>
+        <Button
+          imgSrc="./assets/images/italy.svg"
+          variant={BUTTON_VARIANTS.list}
+        >
+          Italiana
+        </Button>
+        <Button
+          imgSrc="./assets/images/russia.svg"
+          variant={BUTTON_VARIANTS.list}
+        >
+          русский
+        </Button>
+        <Button
+          imgSrc="./assets/images/china.svg"
+          variant={BUTTON_VARIANTS.list}
+        >
+          中国人
+        </Button>
+        <Button
+          imgSrc="./assets/images/french.svg"
+          variant={BUTTON_VARIANTS.list}
+        >
+          français
+        </Button>
+      </ModalContainer>
+    </Container>
   );
 };

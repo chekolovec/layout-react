@@ -2,35 +2,8 @@
 
 .header {
   .language {
-    &-popup {
-      &-container {
-        width: 160px;
-        display: none;
-        background-color: $white;
-        box-shadow: 0 5px 10px rgb(30 32 37 / 12%);
-        padding: 10px 0;
-        position: absolute;
-        left: -140px;
-        top: 40px;
-        border-radius: 5px;
-        &.active {
-          display: block;
-        }
-      }
-      &-item {
-        display: flex;
-        padding: 8px 19px;
-        width: 100%;
-        &:hover {
-          background-color: $border-color;
-        }
-      }
-      &-flag {
-        width: 18px;
-        height: 18px;
-        margin-right: 10px;
-        border-radius: 5px;
-      }
+    &-img {
+      border-radius: 5px;
     }
   }
 }

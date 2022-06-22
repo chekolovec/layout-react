@@ -1,0 +1,28 @@
+@import "../../variables.scss";
+
+.default {
+  font-family: Poppins, sans-serif;
+}
+
+.small {
+  font-family: Poppins, sans-serif;
+  color: $breadcrumb-second;
+}
+
+.medium {
+  font-size: 16px;
+  color: $header-button;
+  font-weight: 500;
+}
+
+.secondary {
+  color: $burger;
+  font-size: 12px;
+  text-align: left;
+}
+
+.noWrap {
+  white-space: nowrap;
+  flex: 1;
+  text-align: left;
+}

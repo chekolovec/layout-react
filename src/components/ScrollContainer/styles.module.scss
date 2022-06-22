@@ -1,0 +1,7 @@
+@import "../../variables.scss";
+
+.default {
+  padding: 8px;
+  overflow: scroll;
+  border-bottom: 1px dashed $border-color;
+}

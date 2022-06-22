@@ -1,0 +1,53 @@
+@import "../../variables.scss";
+
+.default {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed $border-color;
+  flex-direction: row;
+}
+
+.secondary {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  flex: 1;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.small {
+  padding: 0 8px;
+}
+
+.medium {
+  padding: 4px 8px;
+  display: flex;
+}
+
+.big {
+  padding: 16px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.alignCenter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.relative {
+  position: relative;
+}

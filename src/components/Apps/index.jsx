@@ -1,78 +1,68 @@
 import React, { useState } from "react";
-import "./styles.scss";
+import { Button, BUTTON_VARIANTS } from "../Button";
+import { Container, CONTAINER_VARIANTS } from "../Container";
+import { GridContainer } from "../GridContainer";
+import { ModalContainer } from "../ModalContainer";
+import { Title, TITLE_VARIANTS } from "../Title";
 
 export const Apps = () => {
   const [modalShown, toggleModal] = useState(false);
   return (
-    <div className="header-button-container">
-      <button
-        className="header-button-wrapper"
+    <Container variant={CONTAINER_VARIANTS.relative}>
+      <Button
+        variant={BUTTON_VARIANTS.icon}
+        iconName="bx:category-alt"
         onClick={() => toggleModal(!modalShown)}
-      >
-        <span
-          className="iconify header-button"
-          data-icon="bx:category-alt"
-        ></span>
-      </button>
-      <div className={`apps-container ${modalShown ? "active" : ""}`}>
-        <div className="apps-top">
-          <h6 className="apps-title">Web Apps</h6>
-          <button className="apps-all-button">
-            <span className="apps-all-text">View All Apps</span>
-            <i className="ri-arrow-right-s-line align-middle"></i>
-          </button>
-        </div>
-        <div className="apps-list">
-          <button className="apps-item">
-            <img
-              src="./assets/images/github.png"
-              alt="App"
-              className="apps-item-img"
-            />
-            <span className="apps-item-name">Github</span>
-          </button>
-          <button className="apps-item">
-            <img
-              src="./assets/images/bitbucket.png"
-              alt="App"
-              className="apps-item-img"
-            />
-            <span className="apps-item-name">Bitbucket</span>
-          </button>
-          <button className="apps-item">
-            <img
-              src="./assets/images/dribbble.png"
-              alt="App"
-              className="apps-item-img"
-            />
-            <span className="apps-item-name">Dribble</span>
-          </button>
-          <button className="apps-item">
-            <img
-              src="./assets/images/dropbox.png"
-              alt="App"
-              className="apps-item-img"
-            />
-            <span className="apps-item-name">Dropbox</span>
-          </button>
-          <button className="apps-item">
-            <img
-              src="./assets/images/mail_chimp.png"
-              alt="App"
-              className="apps-item-img"
-            />
-            <span className="apps-item-name">Mail Chimp</span>
-          </button>
-          <button className="apps-item">
-            <img
-              src="./assets/images/slack.png"
-              alt="App"
-              className="apps-item-img"
-            />
-            <span className="apps-item-name">Slack</span>
-          </button>
-        </div>
-      </div>
-    </div>
+      />
+      <ModalContainer active={modalShown} width={320}>
+        <Container>
+          <Title variant={TITLE_VARIANTS.secondary}>Web Apps</Title>
+          <Button
+            variant={BUTTON_VARIANTS.secondary}
+            iconRight={<i className="ri-arrow-right-s-line align-middle"></i>}
+          >
+            View All Apps
+          </Button>
+        </Container>
+        <GridContainer>
+          <Button
+            variant={BUTTON_VARIANTS.grid}
+            iconSrc="./assets/images/github.png"
+          >
+            Github
+          </Button>
+          <Button
+            variant={BUTTON_VARIANTS.grid}
+            iconSrc="./assets/images/bitbucket.png"
+          >
+            Bitbucket
+          </Button>
+          <Button
+            variant={BUTTON_VARIANTS.grid}
+            iconSrc="./assets/images/dribbble.png"
+          >
+            Dribble
+          </Button>
+          <Button
+            variant={BUTTON_VARIANTS.grid}
+            iconSrc="./assets/images/dropbox.png"
+          >
+            Dropbox
+          </Button>
+          <Button
+            variant={BUTTON_VARIANTS.grid}
+            iconSrc="./assets/images/mail_chimp.png"
+          >
+            Mail Chimp
+          </Button>
+          <Button
+            variant={BUTTON_VARIANTS.grid}
+            iconSrc="./assets/images/slack.png"
+          >
+            Slack
+          </Button>
+        </GridContainer>
+      </ModalContainer>
+    </Container>
   );
 };

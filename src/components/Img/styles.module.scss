@@ -1,0 +1,17 @@
+@import "../../variables.scss";
+
+.rounded {
+  width: 48px;
+  height: 48px;
+  background-color: rgb(243, 246, 249);
+  border-radius: 50%;
+  padding: 5px;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+.primary {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+}

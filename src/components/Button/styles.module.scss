@@ -1,0 +1,122 @@
+@import "../../variables.scss";
+
+.button {
+}
+
+.icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 100%;
+  &:hover {
+    background-color: $button-hover;
+    .header-button {
+      color: $blue;
+    }
+  }
+}
+
+.iconInner {
+  width: 20px;
+  height: 20px;
+  color: $header-button;
+}
+
+.counterWrapper {
+  color: $white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 6px 2px 6px;
+  border-radius: 100%;
+  line-height: 1;
+  .counter {
+    font-size: 9px;
+  }
+}
+
+.defaultCounter {
+  background-color: $cart-counter;
+}
+
+.noticiationCounter {
+  background-color: $notification-counter;
+}
+
+.list {
+  padding: 8px 19px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  &:hover {
+    background-color: $border-color;
+  }
+}
+
+.listImg {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.listIcon {
+  margin-right: 10px;
+  color: $neutral;
+}
+
+.secondaryText {
+  font-size: 12px;
+}
+
+.secondary {
+  padding: 4px 8px;
+  color: $cian;
+  background-color: rgba(41, 156, 219, 0.1);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  &:hover {
+    background-color: $cian;
+    color: $white;
+  }
+}
+
+.grid {
+  padding: 15px 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: $border-color;
+  }
+}
+
+.gridTitle {
+  padding-top: 10px;
+}
+
+.link {
+  color: $header-button;
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+
+.default {
+}
+
+.primary {
+  background-color: $add-color;
+  color: $white;
+  flex: 1;
+  padding: 8px 14px;
+  border-radius: 3px;
+  &:hover {
+    background-color: #099885;
+  }
+}

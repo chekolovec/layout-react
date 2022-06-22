@@ -1,22 +1,19 @@
 import React, { useState } from "react";
+import { Button, BUTTON_VARIANTS, COUNTER_VARIANTS } from "../Button";
+import { Container, CONTAINER_VARIANTS } from "../Container";
 import "./styles.scss";
 
 export const Notifications = () => {
   const [modalShown, toggleModal] = useState(false);
   return (
-    <div className="header-button-container">
-      <button
-        className="header-button-wrapper"
+    <Container variant={CONTAINER_VARIANTS.relative}>
+      <Button
+        variant={BUTTON_VARIANTS.icon}
+        iconName="akar-icons:bell"
         onClick={() => toggleModal(!modalShown)}
-      >
-        <span
-          className="iconify header-button"
-          data-icon="akar-icons:bell"
-        ></span>
-        <div className="notification counter-wrapper">
-          <span className="notification counter">3</span>
-        </div>
-      </button>
+        counter={3}
+        counterVariant={COUNTER_VARIANTS.notificationCounter}
+      />
       <div className={`notifications ${modalShown ? "active" : ""} `}>
         <div className="notifications-top">
           <h6 className="notifications-title">Notifications</h6>
@@ -108,6 +105,6 @@ export const Notifications = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
