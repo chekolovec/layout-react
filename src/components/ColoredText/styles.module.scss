@@ -2,6 +2,9 @@
 
 .default {
   font-weight: 600;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 3px;
 }
 
 .small {
@@ -15,8 +18,14 @@
 
 .info {
   color: $pending;
+  background-color: rgba(247, 184, 75, 0.1);
 }
 
 .success {
   background-color: rgba(10, 179, 156, 0.18);
+}
+
+.secondary {
+  color: $white;
+  background-color: rgba(243, 246, 249, 0.1);
 }

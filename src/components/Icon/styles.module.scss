@@ -1,0 +1,23 @@
+@import "../../variables.scss";
+
+.default {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.reward {
+  background-color: rgba(41, 156, 219, 0.18);
+  color: $blue;
+}
+
+.success {
+  background-color: rgba(240, 101, 72, 0.18);
+  color: $failure;
+}

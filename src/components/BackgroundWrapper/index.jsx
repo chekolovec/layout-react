@@ -3,9 +3,11 @@ import styles from "./styles.module.scss";
 
 export const BACKGROUND_VARIANTS = {
   default: "default",
+  secondary: "secondary",
+  white: "white",
 };
 
 export const BackgroundWrapper = ({
   children,
   variant = BACKGROUND_VARIANTS.default,
-}) => <view className={styles[variant]}>{children}</view>;
+}) => <div className={styles[variant]}>{children}</div>;

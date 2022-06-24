@@ -1,28 +1,24 @@
 import React from "react";
-import styles from "./styles.module.scss";
+import "./styles.scss";
 
 export const TITLE_VARIANTS = {
-  primary: "primary",
-  secondary: "secondary",
-  small: "small",
-  middle: "middle",
-  neutral: "neutral",
+  primary: "primaryTitle",
+  secondary: "secondaryTitle",
+  small: "smallTitle",
+  middle: "middleTitle",
+  neutral: "neutralTitle",
+  subtitle: "subTitle",
 };
 
-export const Title = ({ variant, children }) => (
-  <>
-    {variant === TITLE_VARIANTS.secondary && (
-      <h3 className={styles.secondary}>{children}</h3>
-    )}
-    {variant === TITLE_VARIANTS.small ||
-      (variant === TITLE_VARIANTS.neutral && (
-        <h6 className={styles[variant]}>{children}</h6>
-      ))}
-    {variant === TITLE_VARIANTS.middle && (
-      <h5 className={styles[variant]}>{children}</h5>
-    )}
-    {variant === TITLE_VARIANTS.primary && (
-      <h4 className={styles[variant]}>{children}</h4>
-    )}
-  </>
+export const TITLE_COLORS = {
+  WHITE: "whiteTitle",
+};
+
+export const Title = ({ variant, children, color, textAlign }) => (
+  <h3
+    className={`Title ${variant} ${color ? color : ""}`}
+    style={{ textAlign }}
+  >
+    {children}
+  </h3>
 );

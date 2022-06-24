@@ -4,8 +4,15 @@ import styles from "./styles.module.scss";
 export const IMG_VARIANTS = {
   rounded: "rounded",
   primary: "primary",
+  small: "small",
 };
 
-export const Img = ({ variant, src, alt }) => (
-  <img className={styles[variant]} src={src} alt={alt} />
+export const Img = ({ variant, src, alt, width, height }) => (
+  <img
+    className={styles[variant]}
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+  />
 );

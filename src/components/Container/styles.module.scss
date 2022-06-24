@@ -2,22 +2,26 @@
 
 .default {
   padding: 16px;
-  display: flex;
-  justify-content: space-between;
+}
+
+.borderDashed {
   border-bottom: 1px dashed $border-color;
-  flex-direction: row;
 }
 
 .secondary {
-  display: flex;
   padding: 8px 16px;
-  justify-content: space-between;
+}
+
+.alignCenter {
   align-items: center;
 }
 
 .flex {
   display: flex;
-  flex: 1;
+}
+
+.spaceBetween {
+  justify-content: space-between;
 }
 
 .flex1 {
@@ -30,24 +34,42 @@
 
 .medium {
   padding: 4px 8px;
-  display: flex;
 }
 
 .big {
-  padding: 16px;
+  padding: 8px;
 }
 
 .column {
-  display: flex;
   flex-direction: column;
-}
-
-.alignCenter {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .relative {
   position: relative;
+}
+
+.borderSolid {
+  border-bottom: 1px solid $border-color;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.height100 {
+  height: 100%;
+}
+
+.backgroundSecondary {
+  background-color: $header-profile;
+}
+
+.scroll {
+  overflow: scroll;
+}
+
+.hover {
+  &:hover {
+    background-color: $border-color;
+  }
 }

@@ -10,6 +10,7 @@ export const COLORED_TEXT_COLORS = {
   info: "info",
   success: "success",
   failure: "failure",
+  secondary: "secondary",
 };
 
 export const ColoredText = ({

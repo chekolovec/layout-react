@@ -1,27 +1,27 @@
 @import "../../variables.scss";
 
-.default {
+.defaultText {
   font-family: Poppins, sans-serif;
 }
 
-.small {
+.smallText {
   font-family: Poppins, sans-serif;
   color: $breadcrumb-second;
 }
 
-.medium {
+.mediumText {
   font-size: 16px;
   color: $header-button;
   font-weight: 500;
 }
 
-.secondary {
+.secondaryText {
   color: $burger;
-  font-size: 12px;
+  font-size: 13px;
   text-align: left;
 }
 
-.noWrap {
+.noWrapText {
   white-space: nowrap;
   flex: 1;
   text-align: left;

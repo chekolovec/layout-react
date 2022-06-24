@@ -1,6 +1,9 @@
 @import "../../variables.scss";
 
-.button {
+.default {
+  &:hover {
+    background-color: $border-color;
+  }
 }
 
 .icon {
@@ -17,6 +20,34 @@
     .header-button {
       color: $blue;
     }
+  }
+}
+
+.iconSquare {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 27px;
+  height: 27px;
+  flex-shrink: 0;
+  border-radius: 3px;
+  &:hover {
+    background-color: $button-hover;
+  }
+}
+
+.tab {
+  padding: 8px 16px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  &:hover {
+    color: $white;
+  }
+  &.active {
+    background-color: $white;
+    color: $link;
+    border-radius: 3px 3px 0 0;
   }
 }
 
@@ -119,4 +150,25 @@
   &:hover {
     background-color: #099885;
   }
+}
+
+.success {
+  color: $success;
+  background-color: rgba(10, 179, 156, 0.1);
+  &:hover {
+    background-color: $success;
+    color: $white;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.height100 {
+  height: 100%;
 }

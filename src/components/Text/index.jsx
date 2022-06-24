@@ -1,14 +1,23 @@
 import React from "react";
-import styles from "./styles.module.scss";
+import "./styles.scss";
 
 export const TEXT_VARIANTS = {
-  default: "default",
-  small: "small",
-  medium: "medium",
-  secondary: "secondary",
-  noWrap: "noWrap",
+  default: "defaultText",
+  small: "smallText",
+  medium: "mediumText",
+  secondary: "secondaryText",
+  noWrap: "noWrapText",
 };
 
-export const Text = ({ children, variant = TEXT_VARIANTS.default }) => {
-  return <p className={styles[variant]}>{children}</p>;
+export const Text = ({
+  children,
+  variant = TEXT_VARIANTS.default,
+  align,
+  fontWeight,
+}) => {
+  return (
+    <p className={variant} style={{ textAlign: align, fontWeight }}>
+      {children}
+    </p>
+  );
 };
