@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import styles from "./styles.module.scss";
 
@@ -30,21 +31,24 @@ export const Container = ({
   maxHeight,
   scroll,
   hover,
+  className,
 }) => (
   <div
-    className={`${variant ? styles[variant] : ""} ${flex ? styles.flex : ""} ${
-      flex1 ? styles.flex1 : ""
-    } ${spaceBetween ? styles.spaceBetween : ""} ${
-      column ? styles.column : ""
-    } ${borderDashed ? styles.borderDashed : ""} ${
-      borderSolid ? styles.borderSolid : ""
-    } ${alignCenter ? styles.alignCenter : ""} ${
-      relative ? styles.relative : ""
-    } ${height100 ? styles.height100 : ""} ${
-      backgroundSecondary ? styles.backgroundSecondary : ""
-    } ${width100 ? styles.width100 : ""} ${scroll ? styles.scroll : ""} ${
-      hover ? styles.hover : ""
-    }`}
+    className={classNames(className, styles[variant], {
+      [styles.flex]: flex,
+      [styles.flex1]: flex1,
+      [styles.spaceBetween]: spaceBetween,
+      [styles.column]: column,
+      [styles.borderDashed]: borderDashed,
+      [styles.borderSolid]: borderSolid,
+      [styles.alignCenter]: alignCenter,
+      [styles.relative]: relative,
+      [styles.height100]: height100,
+      [styles.backgroundSecondary]: backgroundSecondary,
+      [styles.width100]: width100,
+      [styles.scroll]: scroll,
+      [styles.hover]: hover,
+    })}
     style={{
       paddingRight,
       paddingTop,

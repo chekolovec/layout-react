@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import styles from "./styles.module.scss";
 
@@ -7,9 +8,9 @@ export const IMG_VARIANTS = {
   small: "small",
 };
 
-export const Img = ({ variant, src, alt, width, height }) => (
+export const Img = ({ variant, src, alt, width, height, className }) => (
   <img
-    className={styles[variant]}
+    className={classNames(className, styles[variant])}
     src={src}
     alt={alt}
     width={width}

@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import "./styles.scss";
 
@@ -8,6 +9,7 @@ export const TITLE_VARIANTS = {
   middle: "middleTitle",
   neutral: "neutralTitle",
   subtitle: "subTitle",
+  menu: "menu",
 };
 
 export const TITLE_COLORS = {
@@ -15,10 +17,7 @@ export const TITLE_COLORS = {
 };
 
 export const Title = ({ variant, children, color, textAlign }) => (
-  <h3
-    className={`Title ${variant} ${color ? color : ""}`}
-    style={{ textAlign }}
-  >
+  <h3 className={classNames("Title", variant, { color })} style={{ textAlign }}>
     {children}
   </h3>
 );

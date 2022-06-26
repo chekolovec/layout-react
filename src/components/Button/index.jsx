@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import { Text, TEXT_VARIANTS } from "../Text";
 import styles from "./styles.module.scss";
@@ -12,6 +13,8 @@ export const BUTTON_VARIANTS = {
   link: "link",
   primary: "primary",
   tab: "tab",
+  menuTitle: "menuTitle",
+  menuItem: "menuItem",
 };
 
 export const COUNTER_VARIANTS = {
@@ -40,14 +43,17 @@ export const Button = ({
   active,
   color,
   alignItems,
+  className,
 }) => {
   return (
     <button
-      className={`${styles[variant]} ${flex ? styles.flex : ""} ${
-        flex1 ? styles.flex1 : ""
-      } ${height100 ? styles.height100 : ""} ${active ? styles.active : ""} ${
-        color ? styles[color] : ""
-      }`}
+      className={classNames(className, styles[variant], {
+        [styles.flex]: flex,
+        [styles.flex1]: flex1,
+        [styles.height100]: height100,
+        [styles.active]: active,
+        [styles.color]: color,
+      })}
       onClick={onClick}
       style={{ alignItems }}
     >
@@ -93,6 +99,16 @@ export const Button = ({
           <span className={styles.gridTitle}>{children}</span>
         </>
       )}
+      {variant === BUTTON_VARIANTS.menuTitle && (
+        <div className={styles.menuTitleWrapper}>
+          {iconLeft}
+          <div className={styles.menuTitleDesktop}>
+            <h3>{children}</h3>
+            {iconRight}
+          </div>
+        </div>
+      )}
+      {variant === BUTTON_VARIANTS.menuItem && children}
       {variant === BUTTON_VARIANTS.link && <span>{children}</span>}
       {variant === BUTTON_VARIANTS.default && children}
       {variant === BUTTON_VARIANTS.primary && children}

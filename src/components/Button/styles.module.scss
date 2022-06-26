@@ -138,9 +138,6 @@
   padding-bottom: 5px;
 }
 
-.default {
-}
-
 .primary {
   background-color: $add-color;
   color: $white;
@@ -171,4 +168,69 @@
 
 .height100 {
   height: 100%;
+}
+
+.menuTitle {
+  padding: 10px 24px;
+  color: $menu-link;
+  .menuTitleDesktop {
+    display: none;
+
+    @media (min-width: 1220px) {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+  }
+  &:hover {
+    color: $white;
+  }
+  .menuTitleWrapper {
+    display: flex;
+    align-items: center;
+  }
+  i {
+    font-size: 22px;
+    @media (min-width: 1220px) {
+      font-size: 18px;
+    }
+  }
+  h3 {
+    font-family: hkgrotesk, sans-serif;
+    padding-left: 10px;
+    margin-right: auto;
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: 400;
+    text-align: left;
+  }
+  &.active {
+    color: $white;
+  }
+}
+
+.menuItem {
+  color: $menu-link;
+  font-size: 15px;
+  padding: 10px 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  &:before {
+    width: 5px;
+    border-bottom: 1px solid $menu-section;
+    content: "";
+    display: block;
+    margin-right: 15px;
+    margin-left: 5px;
+  }
+  &.active:before {
+    border-color: $menu-link-active;
+  }
+  &:hover {
+    color: $menu-link-active;
+    &:before {
+      border-color: $menu-link-active;
+    }
+  }
 }

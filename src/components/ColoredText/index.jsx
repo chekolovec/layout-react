@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import styles from "./styles.module.scss";
 
@@ -17,4 +18,6 @@ export const ColoredText = ({
   children,
   variant = COLORED_TEXT_VARIANTS.default,
   color = COLORED_TEXT_COLORS.info,
-}) => <span className={`${styles[variant]} ${styles[color]}`}>{children}</span>;
+}) => (
+  <span className={classNames(styles[variant], styles[color])}>{children}</span>
+);

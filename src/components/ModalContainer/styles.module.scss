@@ -1,7 +1,6 @@
 @import "../../variables.scss";
 
 .default {
-  display: none;
   background-color: $white;
   box-shadow: 0 5px 10px rgb(30 32 37 / 12%);
   position: absolute;
@@ -9,7 +8,4 @@
   border-radius: 5px;
   z-index: 100;
   overflow: hidden;
-  &.active {
-    display: block;
-  }
 }

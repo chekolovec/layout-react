@@ -1,0 +1,9 @@
+@import "../../variables.scss";
+
+.menuItemsWrapper {
+  display: none;
+
+  @media (min-width: 1220px) {
+    display: block;
+  }
+}

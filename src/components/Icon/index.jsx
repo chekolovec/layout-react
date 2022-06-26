@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import styles from "./styles.module.scss";
 
@@ -15,5 +16,7 @@ export const Icon = ({
   children,
   background,
 }) => (
-  <div className={`${styles[variant]} ${styles[background]}`}>{children}</div>
+  <div className={classNames(styles[variant], styles[background])}>
+    {children}
+  </div>
 );
