@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 import "./styles.scss";
 
@@ -14,9 +15,13 @@ export const Text = ({
   variant = TEXT_VARIANTS.default,
   align,
   fontWeight,
+  className,
 }) => {
   return (
-    <p className={variant} style={{ textAlign: align, fontWeight }}>
+    <p
+      className={classNames(className, variant)}
+      style={{ textAlign: align, fontWeight }}
+    >
       {children}
     </p>
   );

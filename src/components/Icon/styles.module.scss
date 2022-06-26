@@ -12,6 +12,17 @@
   overflow: hidden;
 }
 
+.primary {
+  width: 48px;
+  height: 48px;
+  border-radius: 5px;
+  color: $success;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+}
+
 .reward {
   background-color: rgba(41, 156, 219, 0.18);
   color: $blue;
@@ -20,4 +31,21 @@
 .success {
   background-color: rgba(240, 101, 72, 0.18);
   color: $failure;
+}
+
+.earning {
+  background-color: rgba(10, 179, 156, 0.18);
+  color: $success;
+}
+.orders {
+  background-color: rgba(41, 156, 219, 0.18);
+  color: rgb(41, 156, 219);
+}
+.customers {
+  background-color: rgba(247, 184, 75, 0.18);
+  color: rgb(247, 184, 75);
+}
+.balance {
+  background-color: rgba(64, 81, 137, 0.18);
+  color: rgb(64, 81, 137);
 }

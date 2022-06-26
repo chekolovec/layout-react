@@ -4,7 +4,7 @@ import { Button, BUTTON_VARIANTS } from "../Button";
 import { Container, CONTAINER_VARIANTS } from "../Container";
 import { GridContainer } from "../GridContainer";
 import { ModalContainer } from "../ModalContainer";
-import { Title, TITLE_VARIANTS } from "../Title";
+import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
 
 export const Apps = () => {
   const [modalShown, toggleModal] = useState(false);
@@ -22,7 +22,13 @@ export const Apps = () => {
           borderDashed
           flex
         >
-          <Title variant={TITLE_VARIANTS.secondary}>Web Apps</Title>
+          <Title
+            variant={TITLE_VARIANTS.secondary}
+            color={TITLE_COLORS.primary}
+            weight={TITLE_WEIGHTS.bold}
+          >
+            Web Apps
+          </Title>
           <Button
             variant={BUTTON_VARIANTS.secondary}
             iconRight={<i className="ri-arrow-right-s-line align-middle"></i>}

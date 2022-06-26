@@ -7,17 +7,40 @@ export const TITLE_VARIANTS = {
   secondary: "secondaryTitle",
   small: "smallTitle",
   middle: "middleTitle",
-  neutral: "neutralTitle",
-  subtitle: "subTitle",
+  large: "largeTitle",
   menu: "menu",
 };
 
-export const TITLE_COLORS = {
-  WHITE: "whiteTitle",
+export const TITLE_WEIGHTS = {
+  light: "lightWeight",
+  normal: "normalWeight",
+  heavy: "heavyWeight",
+  bold: "boldWeight",
 };
 
-export const Title = ({ variant, children, color, textAlign }) => (
-  <h3 className={classNames("Title", variant, { color })} style={{ textAlign }}>
+export const TITLE_COLORS = {
+  white: "whiteColor",
+  primary: "primaryColor",
+  secondary: "secondaryColor",
+  neutral: "neutralColor",
+  success: "successColor",
+};
+
+export const Title = ({
+  variant,
+  children,
+  color,
+  textAlign,
+  className,
+  weight,
+  uppercase,
+}) => (
+  <h3
+    className={classNames(className, "Title", variant, color, weight, {
+      uppercase,
+    })}
+    style={{ textAlign }}
+  >
     {children}
   </h3>
 );

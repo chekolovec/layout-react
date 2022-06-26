@@ -4,6 +4,10 @@
   padding: 16px;
 }
 
+.defaultSmall {
+  padding: 12px;
+}
+
 .borderDashed {
   border-bottom: 1px dashed $border-color;
 }
@@ -16,12 +20,20 @@
   align-items: center;
 }
 
+.alignEnd {
+  align-items: flex-end;
+}
+
 .flex {
   display: flex;
 }
 
 .spaceBetween {
   justify-content: space-between;
+}
+
+.justifyCenter {
+  justify-content: center;
 }
 
 .flex1 {
@@ -38,6 +50,10 @@
 
 .big {
   padding: 8px;
+}
+
+.large {
+  padding: 10px 24px;
 }
 
 .column {
@@ -71,5 +87,26 @@
 .hover {
   &:hover {
     background-color: $border-color;
+  }
+}
+
+.vertical12 {
+  padding: 0 12px;
+}
+
+.flexWrap {
+  flex-wrap: wrap;
+}
+
+.contentSection {
+  background-color: $white;
+  margin: 0 12px;
+  padding-bottom: 12px;
+  box-shadow: 0 1px 2px rgb(56 65 74 / 15%);
+  border-radius: 5px;
+  margin-bottom: 24px;
+  @media (max-width: 1220px) {
+    flex: 100%;
+    width: auto;
   }
 }

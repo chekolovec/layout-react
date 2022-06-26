@@ -1,63 +1,85 @@
 @import "../../variables.scss";
 
 .Title {
+  font-family: Poppins, sans-serif;
   span.reward {
     color: $blue;
   }
   .success {
     color: $success;
   }
-}
 
-.menu {
-  color: $menu-section;
-  padding: 12px 20px;
-  text-transform: uppercase;
-  font-size: 11px;
-  font-weight: 600;
-  display: none;
+  &.menu {
+    color: $menu-section;
+    padding: 12px 20px;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    display: none;
 
-  @media (min-width: 1220px) {
-    display: inline;
+    @media (min-width: 1220px) {
+      display: inline;
+    }
   }
-}
 
-.secondaryTitle {
-  font-family: Poppins, sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: $header-button;
-}
+  &.smallTitle {
+    font-size: 11px;
+  }
 
-.smallTitle {
-  color: $header-button;
-  font-size: 16px;
-  font-weight: 400;
-}
+  &.primaryTitle {
+    font-size: 13px;
+  }
 
-.middleTitle {
-  color: $title-middle;
-  font-size: 16px;
-  font-weight: 500;
-}
+  &.secondaryTitle {
+    font-size: 15px;
+  }
 
-.primaryTitle {
-  font-size: 13px;
-  font-weight: 500;
-  color: $header-button;
-}
+  &.middleTitle {
+    font-size: 16px;
+  }
 
-.neutralTitle {
-  color: $neutral;
-  font-weight: 500;
-}
+  &.largeTitle {
+    font-family: hkgrotesk, sans-serif;
+    font-size: 22px;
+  }
 
-.subTitle {
-  color: $white;
-  font-weight: 600;
-  font-size: 16px;
-}
+  &.lightWeight {
+    font-weight: 300;
+  }
 
-.whiteTitle {
-  color: $white;
+  &.normalWeight {
+    font-weight: 400;
+  }
+
+  &.heavyWeight {
+    font-weight: 500;
+  }
+
+  &.boldWeight {
+    font-weight: 600;
+  }
+
+  &.primaryColor {
+    color: $header-button;
+  }
+
+  &.secondaryColor {
+    color: $title-middle;
+  }
+
+  &.whiteColor {
+    color: $white;
+  }
+
+  &.neutralColor {
+    color: $neutral;
+  }
+
+  &.successColor {
+    color: $success;
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
 }

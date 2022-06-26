@@ -11,10 +11,12 @@ export const BUTTON_VARIANTS = {
   secondary: "secondary",
   grid: "grid",
   link: "link",
+  linkUnderlined: "linkUnderlined",
   primary: "primary",
   tab: "tab",
   menuTitle: "menuTitle",
   menuItem: "menuItem",
+  selector: "selector",
 };
 
 export const COUNTER_VARIANTS = {
@@ -24,6 +26,7 @@ export const COUNTER_VARIANTS = {
 
 export const BUTTON_COLORS = {
   success: "success",
+  cian: "cian",
 };
 
 export const Button = ({
@@ -43,16 +46,19 @@ export const Button = ({
   active,
   color,
   alignItems,
+  inactive,
+  uppercase,
   className,
 }) => {
   return (
     <button
-      className={classNames(className, styles[variant], {
+      className={classNames(className, styles[variant], styles[color], {
         [styles.flex]: flex,
         [styles.flex1]: flex1,
         [styles.height100]: height100,
         [styles.active]: active,
-        [styles.color]: color,
+        [styles.inactive]: inactive,
+        [styles.uppercase]: uppercase,
       })}
       onClick={onClick}
       style={{ alignItems }}
@@ -110,9 +116,11 @@ export const Button = ({
       )}
       {variant === BUTTON_VARIANTS.menuItem && children}
       {variant === BUTTON_VARIANTS.link && <span>{children}</span>}
+      {variant === BUTTON_VARIANTS.linkUnderlined && children}
       {variant === BUTTON_VARIANTS.default && children}
       {variant === BUTTON_VARIANTS.primary && children}
       {variant === BUTTON_VARIANTS.tab && children}
+      {variant === BUTTON_VARIANTS.selector && children}
     </button>
   );
 };

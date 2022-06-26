@@ -138,14 +138,21 @@
   padding-bottom: 5px;
 }
 
+.linkUnderlined {
+  color: $link;
+  white-space: nowrap;
+  text-decoration: underline;
+}
+
 .primary {
-  background-color: $add-color;
-  color: $white;
+  color: $add-color;
+  background-color: rgba(10, 179, 156, 0.1);
   flex: 1;
   padding: 8px 14px;
   border-radius: 3px;
   &:hover {
     background-color: #099885;
+    color: $white;
   }
 }
 
@@ -154,6 +161,15 @@
   background-color: rgba(10, 179, 156, 0.1);
   &:hover {
     background-color: $success;
+    color: $white;
+  }
+}
+
+.cian {
+  background-color: $recent-bg;
+  color: $cian;
+  &:hover {
+    background-color: $cian;
     color: $white;
   }
 }
@@ -232,5 +248,28 @@
     &:before {
       border-color: $menu-link-active;
     }
+  }
+}
+
+.selector {
+  padding: 4px 8px;
+  color: $blue;
+  background-color: rgba(53, 119, 241, 0.1);
+  border-radius: 3px;
+  font-size: 12px;
+  &.uppercase {
+    text-transform: uppercase;
+  }
+  &.inactive {
+    background-color: rgba(64, 81, 137, 0.1);
+    color: $link;
+    &:hover {
+      background-color: $link;
+      color: $white;
+    }
+  }
+  &:hover {
+    background-color: $blue;
+    color: $white;
   }
 }

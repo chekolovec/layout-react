@@ -5,6 +5,7 @@ export const BACKGROUND_VARIANTS = {
   default: "default",
   secondary: "secondary",
   white: "white",
+  content: "content",
 };
 
 export const BackgroundWrapper = ({

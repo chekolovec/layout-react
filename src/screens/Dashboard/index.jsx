@@ -4,16 +4,16 @@ import { BestProducts } from "../../components/BestProducts";
 import { Breadcrumbs } from "../../components/Breadcrumbs";
 import { Button, BUTTON_VARIANTS } from "../../components/Button";
 import { Cart } from "../../components/Cart";
-import { Container } from "../../components/Container";
+import { Container, CONTAINER_VARIANTS } from "../../components/Container";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { LanguageSelector } from "../../components/LanguageSelector";
-import { Locations } from "../../components/Locations";
+import { SalesLocations } from "../../components/SalesLocations";
 import { Menu } from "../../components/Menu";
 import { Notifications } from "../../components/Notifications";
 import { Orders } from "../../components/Orders";
 import { Profile } from "../../components/Profile";
-import { Revenue } from "../../components/Revenue";
+import { RevenueGraph } from "../../components/RevenueGraph";
 import { RightBar } from "../../components/RightBar";
 import { SearchBar } from "../../components/SearchBar";
 import { TopSellers } from "../../components/TopSellers";
@@ -22,7 +22,7 @@ import { Visits } from "../../components/Visits";
 
 export const Dashboard = () => {
   return (
-    <div className="main-container">
+    <Container className="main-container">
       <Menu />
 
       <Container maxHeight="100%" flex flex1 column>
@@ -60,17 +60,19 @@ export const Dashboard = () => {
           </Container>
         </Header>
 
-        <div className="content-scroll">
-          <Breadcrumbs />
+        <Container scroll>
+          <Breadcrumbs mainRoute="Dashboard" secondaryRoutes={["Dashboard"]} />
 
-          <div className="content-wrapper-main">
-            <div className="content-wrapper">
+          <Container flex flex1>
+            <Container
+              className="content-wrapper"
+              variant={CONTAINER_VARIANTS.defaultSmall}
+            >
               <Total />
-
-              <div className="flex-container graph">
-                <Revenue />
-                <Locations />
-              </div>
+              <Container flex flexWrap>
+                <RevenueGraph />
+                <SalesLocations />
+              </Container>
 
               <div className="selling flex-container">
                 <BestProducts />
@@ -81,12 +83,12 @@ export const Dashboard = () => {
                 <Visits />
                 <Orders />
               </div>
-            </div>
+            </Container>
             <RightBar />
-          </div>
+          </Container>
           <Footer />
-        </div>
+        </Container>
       </Container>
-    </div>
+    </Container>
   );
 };

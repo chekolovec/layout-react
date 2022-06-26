@@ -4,10 +4,14 @@ import styles from "./styles.module.scss";
 
 export const CONTAINER_VARIANTS = {
   default: "default",
+  defaultSmall: "defaultSmall",
   secondary: "secondary",
   small: "small",
   medium: "medium",
   big: "big",
+  large: "large",
+  contentSection: "contentSection",
+  vertical12: "vertical12",
 };
 
 export const Container = ({
@@ -20,10 +24,12 @@ export const Container = ({
   flex,
   flex1,
   spaceBetween,
+  justifyCenter,
   column,
   borderDashed,
   borderSolid,
   alignCenter,
+  alignEnd,
   relative,
   width100,
   height100,
@@ -31,6 +37,8 @@ export const Container = ({
   maxHeight,
   scroll,
   hover,
+  flexWrap,
+  width,
   className,
 }) => (
   <div
@@ -38,6 +46,7 @@ export const Container = ({
       [styles.flex]: flex,
       [styles.flex1]: flex1,
       [styles.spaceBetween]: spaceBetween,
+      [styles.justifyCenter]: justifyCenter,
       [styles.column]: column,
       [styles.borderDashed]: borderDashed,
       [styles.borderSolid]: borderSolid,
@@ -48,6 +57,8 @@ export const Container = ({
       [styles.width100]: width100,
       [styles.scroll]: scroll,
       [styles.hover]: hover,
+      [styles.flexWrap]: flexWrap,
+      [styles.alignEnd]: alignEnd,
     })}
     style={{
       paddingRight,
@@ -55,6 +66,7 @@ export const Container = ({
       paddingBottom,
       paddingLeft,
       maxHeight,
+      width,
     }}
   >
     {children}

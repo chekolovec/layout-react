@@ -14,7 +14,7 @@ import { Icon, ICON_BACKGROUND } from "../Icon";
 import { Img, IMG_VARIANTS } from "../Img";
 import { ModalContainer } from "../ModalContainer";
 import { Text, TEXT_VARIANTS } from "../Text";
-import { Title, TITLE_VARIANTS } from "../Title";
+import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
 
 export const Notifications = () => {
   const [modalShown, toggleModal] = useState(false);
@@ -35,7 +35,13 @@ export const Notifications = () => {
             spaceBetween
             alignCenter
           >
-            <Title variant={TITLE_VARIANTS.subtitle}>Notifications</Title>
+            <Title
+              variant={TITLE_VARIANTS.middle}
+              weight={TITLE_WEIGHTS.bold}
+              color={TITLE_COLORS.white}
+            >
+              Notifications
+            </Title>
             <ColoredText color={COLORED_TEXT_COLORS.secondary}>
               4 New
             </ColoredText>
@@ -68,9 +74,9 @@ export const Notifications = () => {
                   <Container paddingRight={10}>
                     <Title
                       variant={TITLE_VARIANTS.primary}
+                      weight={TITLE_WEIGHTS.heavy}
+                      color={TITLE_COLORS.primary}
                       textAlign="left"
-                      align="left"
-                      fontWeight={500}
                     >
                       Your <b>Elite</b> author Graphic Optimization
                       <span className="reward"> reward </span>
@@ -98,7 +104,12 @@ export const Notifications = () => {
                   </Container>
 
                   <Container paddingRight={10}>
-                    <Title variant={TITLE_VARIANTS.primary} textAlign="left">
+                    <Title
+                      variant={TITLE_VARIANTS.primary}
+                      weight={TITLE_WEIGHTS.heavy}
+                      color={TITLE_COLORS.primary}
+                      textAlign="left"
+                    >
                       Angela Bernier
                     </Title>
                     <Text variant={TEXT_VARIANTS.secondary}>
@@ -125,7 +136,12 @@ export const Notifications = () => {
                     </Icon>
                   </Container>
                   <Container paddingRight={10}>
-                    <Title variant={TITLE_VARIANTS.primary} textAlign="left">
+                    <Title
+                      variant={TITLE_VARIANTS.primary}
+                      weight={TITLE_WEIGHTS.heavy}
+                      color={TITLE_COLORS.primary}
+                      textAlign="left"
+                    >
                       You have received
                       <span className="success"> 20</span> new messages in the
                       conversation
@@ -151,7 +167,12 @@ export const Notifications = () => {
                     />
                   </Container>
                   <Container paddingRight={16}>
-                    <Title variant={TITLE_VARIANTS.primary} textAlign="left">
+                    <Title
+                      variant={TITLE_VARIANTS.primary}
+                      weight={TITLE_WEIGHTS.heavy}
+                      color={TITLE_COLORS.primary}
+                      textAlign="left"
+                    >
                       Angela Bernier
                     </Title>
 

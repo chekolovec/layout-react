@@ -1,5 +1,11 @@
+import classNames from "classnames";
 import React from "react";
+import { Button, BUTTON_COLORS, BUTTON_VARIANTS } from "../Button";
 import { Calendar } from "../Calendar";
+import { Container, CONTAINER_VARIANTS } from "../Container";
+import { Icon, ICON_VARIANTS } from "../Icon";
+import { Text } from "../Text";
+import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
 import "./styles.scss";
 
 const TOTAL_TABS = [
@@ -42,41 +48,82 @@ const TOTAL_TABS = [
 
 export const Total = () => {
   return (
-    <section className="total">
-      <div className="total-top-wrapper">
-        <div className="total-title-wrapper">
-          <h4 className="total-title">Good Morning, Anna!</h4>
-          <p className="total-subtitle">
+    <Container flex1>
+      <Container
+        flex
+        spaceBetween
+        variant={CONTAINER_VARIANTS.vertical12}
+        paddingBottom={20}
+      >
+        <Container>
+          <Title
+            variant={TITLE_VARIANTS.middle}
+            color={TITLE_COLORS.primary}
+            weight={TITLE_WEIGHTS.heavy}
+            className="total-title"
+          >
+            Good Morning, Anna!
+          </Title>
+          <Text className="total-subtitle">
             Here's what's happening with your store today.
-          </p>
-        </div>
-        <div className="total-extra-wrapper">
-          <div className="total-calendar-container">
+          </Text>
+        </Container>
+        <Container flex>
+          <Container flex>
             <Calendar />
-          </div>
-          <div className="total-add-wrapper">
-            <button className="total-add-container">
+          </Container>
+          <Container alignCenter flex paddingLeft={10}>
+            <Button
+              variant={BUTTON_VARIANTS.primary}
+              color={BUTTON_COLORS.success}
+              alignItems="center"
+              flex
+            >
               <i className="ri-add-circle-line align-middle me-1"></i>
-              <span className="total-add-text">Add Product</span>
-            </button>
-          </div>
-          <div className="total-recent-wrapper">
-            <button className="total-recent-container">
+              Add product
+            </Button>
+          </Container>
+          <Container
+            flex
+            alignCenter
+            className="total-recent-wrapper"
+            paddingLeft={10}
+          >
+            <Button
+              variant={BUTTON_VARIANTS.primary}
+              color={BUTTON_COLORS.cian}
+            >
               <i className="ri-pulse-line"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div className="total-bottom-wrapper">
-        <ul className="total-boxes-container">
+            </Button>
+          </Container>
+        </Container>
+      </Container>
+      <Container>
+        <Container flexWrap flex>
           {TOTAL_TABS.map((tab) => (
-            <li className="total-box" key={tab.title}>
-              <div className="box-title-container">
-                <h5 className="box-title">{tab.title}</h5>
-                <div
-                  className={`price-change-container ${
-                    tab.trend === "positive" ? "success" : ""
-                  } ${tab.trend === "negative" ? "failure" : ""}`}
+            <Container
+              variant={CONTAINER_VARIANTS.default}
+              flex1
+              className="total-box"
+              key={tab.title}
+            >
+              <Container flex spaceBetween paddingBottom={20}>
+                <Title
+                  variant={TITLE_VARIANTS.primary}
+                  weight={TITLE_WEIGHTS.heavy}
+                  color={TITLE_COLORS.neutral}
+                  className="box-title"
+                >
+                  {tab.title}
+                </Title>
+
+                <Container
+                  flex
+                  alignCenter
+                  className={classNames("price-change-container", {
+                    success: tab.trend === "positive",
+                    failure: tab.trend === "negative",
+                  })}
                 >
                   {tab.trend === "positive" && (
                     <i className="ri-arrow-right-up-line fs-13 align-middle"></i>
@@ -84,27 +131,36 @@ export const Total = () => {
                   {tab.trend === "negative" && (
                     <i className="ri-arrow-right-down-line fs-13 align-middle"></i>
                   )}
-                  <p className="price-change-text">{tab.change}</p>
-                </div>
-              </div>
-              <div className="box-info-container">
-                <div className="info-price-container">
-                  <p className="info-price">{tab.price}</p>
-                  <a href="/" className="info-link">
+                  <Text className="price-change-text">{tab.change}</Text>
+                </Container>
+              </Container>
+              <Container spaceBetween flex alignEnd>
+                <Container>
+                  <Container paddingBottom={25}>
+                    <Title
+                      variant={TITLE_VARIANTS.large}
+                      weight={TITLE_WEIGHTS.bold}
+                      color={TITLE_COLORS.primary}
+                    >
+                      {tab.price}
+                    </Title>
+                  </Container>
+
+                  <Button variant={BUTTON_VARIANTS.linkUnderlined}>
                     {tab.linkText}
-                  </a>
-                </div>
-                <div className={"info-icon-container " + tab.iconColor}>
-                  <span
-                    className="iconify info-icon"
-                    data-icon={tab.icon}
-                  ></span>
-                </div>
-              </div>
-            </li>
+                  </Button>
+                </Container>
+                <Icon
+                  variant={ICON_VARIANTS.primary}
+                  background={tab.iconColor}
+                >
+                  {tab.icon}
+                </Icon>
+              </Container>
+            </Container>
           ))}
-        </ul>
-      </div>
-    </section>
+        </Container>
+      </Container>
+    </Container>
   );
 };

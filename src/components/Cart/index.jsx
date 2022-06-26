@@ -7,7 +7,7 @@ import { Img, IMG_VARIANTS } from "../Img";
 import { ModalContainer } from "../ModalContainer";
 import { ScrollContainer } from "../ScrollContainer";
 import { Text, TEXT_VARIANTS } from "../Text";
-import { Title, TITLE_VARIANTS } from "../Title";
+import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
 
 export const Cart = () => {
   const [modalShown, toggleModal] = useState(false);
@@ -26,7 +26,13 @@ export const Cart = () => {
           variant={CONTAINER_VARIANTS.default}
           borderDashed
         >
-          <Title variant={TITLE_VARIANTS.secondary}>My cart</Title>
+          <Title
+            variant={TITLE_VARIANTS.secondary}
+            color={TITLE_COLORS.primary}
+            weight={TITLE_WEIGHTS.bold}
+          >
+            My cart
+          </Title>
           <ColoredText>5 items</ColoredText>
         </Container>
         <ScrollContainer maxHeight={300}>
@@ -48,7 +54,13 @@ export const Cart = () => {
                 <Text variant={TEXT_VARIANTS.small}>Quantity: 10 x $32</Text>
               </Container>
             </Container>
-            <Title variant={TITLE_VARIANTS.small}>$320</Title>
+            <Title
+              variant={TITLE_VARIANTS.middle}
+              weight={TITLE_WEIGHTS.normal}
+              color={TITLE_COLORS.primary}
+            >
+              $320
+            </Title>
             <Container paddingLeft={10}>
               <Button variant={BUTTON_VARIANTS.iconSquare}>
                 <i className="ri-close-fill fs-16"></i>
@@ -73,7 +85,13 @@ export const Cart = () => {
                 <Text variant={TEXT_VARIANTS.small}>Quantity: 10 x $32</Text>
               </Container>
             </Container>
-            <Title variant={TITLE_VARIANTS.small}>$320</Title>
+            <Title
+              variant={TITLE_VARIANTS.middle}
+              weight={TITLE_WEIGHTS.normal}
+              color={TITLE_COLORS.primary}
+            >
+              $320
+            </Title>
             <Container paddingLeft={10}>
               <Button variant={BUTTON_VARIANTS.iconSquare}>
                 <i className="ri-close-fill fs-16"></i>
@@ -98,7 +116,13 @@ export const Cart = () => {
                 <Text variant={TEXT_VARIANTS.small}>Quantity: 10 x $32</Text>
               </Container>
             </Container>
-            <Title variant={TITLE_VARIANTS.small}>$320</Title>
+            <Title
+              variant={TITLE_VARIANTS.middle}
+              weight={TITLE_WEIGHTS.normal}
+              color={TITLE_COLORS.primary}
+            >
+              $320
+            </Title>
             <Container paddingLeft={10}>
               <Button variant={BUTTON_VARIANTS.iconSquare}>
                 <i className="ri-close-fill fs-16"></i>
@@ -123,7 +147,13 @@ export const Cart = () => {
                 <Text variant={TEXT_VARIANTS.small}>Quantity: 10 x $32</Text>
               </Container>
             </Container>
-            <Title variant={TITLE_VARIANTS.small}>$320</Title>
+            <Title
+              variant={TITLE_VARIANTS.middle}
+              weight={TITLE_WEIGHTS.normal}
+              color={TITLE_COLORS.primary}
+            >
+              $320
+            </Title>
             <Container paddingLeft={10}>
               <Button variant={BUTTON_VARIANTS.iconSquare}>
                 <i className="ri-close-fill fs-16"></i>
@@ -148,7 +178,13 @@ export const Cart = () => {
                 <Text variant={TEXT_VARIANTS.small}>Quantity: 10 x $32</Text>
               </Container>
             </Container>
-            <Title variant={TITLE_VARIANTS.small}>$320</Title>
+            <Title
+              variant={TITLE_VARIANTS.middle}
+              weight={TITLE_WEIGHTS.normal}
+              color={TITLE_COLORS.primary}
+            >
+              $320
+            </Title>
             <Container paddingLeft={10}>
               <Button variant={BUTTON_VARIANTS.iconSquare}>
                 <i className="ri-close-fill fs-16"></i>
@@ -159,7 +195,13 @@ export const Cart = () => {
         <Container variant={CONTAINER_VARIANTS.default}>
           <Container flex column>
             <Container spaceBetween flex alignCenter paddingBottom={10}>
-              <Title variant={TITLE_VARIANTS.middle}>Total:</Title>
+              <Title
+                variant={TITLE_VARIANTS.middle}
+                weight={TITLE_WEIGHTS.heavy}
+                color={TITLE_COLORS.neutral}
+              >
+                Total:
+              </Title>
               <Text variant={TEXT_VARIANTS.medium}>$3399.00</Text>
             </Container>
             <Button variant={BUTTON_VARIANTS.primary}>Checkout</Button>
