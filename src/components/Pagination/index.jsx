@@ -1,27 +1,37 @@
 import React from "react";
-import "./styles.scss";
+import { Button, BUTTON_VARIANTS } from "../Button";
+import { Container, CONTAINER_VARIANTS } from "../Container";
+import { Text, TEXT_VARIANTS } from "../Text";
 
 export const Pagination = ({ itemsNumber, totalNumber, current, last }) => {
   return (
-    <div className="pagination">
-      <span className="pagination-text">
+    <Container
+      flex
+      variant={CONTAINER_VARIANTS.defaultSmall}
+      alignCenter
+      spaceBetween
+      className="pagination"
+    >
+      <Text variant={TEXT_VARIANTS.small}>
         Showing <b>{itemsNumber}</b> of <b>{totalNumber}</b> Results
-      </span>
-      <div className="pagination-items">
+      </Text>
+      <Container>
         {current - 1 && (
           <>
-            <button className="pagination-item">←</button>
-            <button className="pagination-item">1</button>
+            <Button variant={BUTTON_VARIANTS.pagination}>←</Button>
+            <Button variant={BUTTON_VARIANTS.pagination}>1</Button>
           </>
         )}
-        <button className="pagination-item active">{current}</button>
+        <Button variant={BUTTON_VARIANTS.pagination} active>
+          {current}
+        </Button>
         {current < last && (
           <>
-            <button className="pagination-item">3</button>
-            <button className="pagination-item">→</button>
+            <Button variant={BUTTON_VARIANTS.pagination}>3</Button>
+            <Button variant={BUTTON_VARIANTS.pagination}>→</Button>
           </>
         )}
-      </div>
-    </div>
+      </Container>
+    </Container>
   );
 };

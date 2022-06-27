@@ -2,6 +2,10 @@ import React from "react";
 import "./styles.scss";
 import { TopSellersItem } from "../TopSellersItem";
 import { Pagination } from "../Pagination";
+import { Container, CONTAINER_VARIANTS } from "../Container";
+import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
+import { Button, BUTTON_VARIANTS } from "../Button";
+import { Text, TEXT_VARIANTS } from "../Text";
 
 const DATA = [
   {
@@ -53,16 +57,35 @@ const DATA = [
 
 export const TopSellers = () => {
   return (
-    <section className="sellers">
-      <div className="content-title-container flex-container">
-        <h6 className="title">Top Sellers</h6>
-        <button className="sort">
-          <span>Report</span>
-          <i className="mdi mdi-chevron-down ms-1"></i>
-        </button>
-      </div>
+    <Container
+      className="top-sellers"
+      flex1
+      variant={CONTAINER_VARIANTS.contentSection}
+    >
+      <Container
+        variant={CONTAINER_VARIANTS.default}
+        flex
+        spaceBetween
+        alignCenter
+        borderSolid
+      >
+        <Title
+          variant={TITLE_VARIANTS.secondary}
+          weight={TITLE_WEIGHTS.heavy}
+          color={TITLE_COLORS.primary}
+        >
+          Top Sellers
+        </Title>
 
-      <ul className="sellers-content">
+        <Button variant={BUTTON_VARIANTS.transparent}>
+          <Text variant={TEXT_VARIANTS.small} className="sort-text">
+            Report
+            <i className="mdi mdi-chevron-down ms-1"></i>
+          </Text>
+        </Button>
+      </Container>
+
+      <Container>
         {DATA.map(
           ({ img, name, author, field, number, price, percent }, index) => (
             <TopSellersItem
@@ -77,8 +100,8 @@ export const TopSellers = () => {
             />
           )
         )}
-      </ul>
+      </Container>
       <Pagination itemsNumber={5} totalNumber={25} current={2} last={5} />
-    </section>
+    </Container>
   );
 };

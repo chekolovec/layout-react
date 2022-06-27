@@ -10,16 +10,22 @@ export const TEXT_VARIANTS = {
   noWrap: "noWrapText",
 };
 
+export const TEXT_COLORS = {
+  primary: "primaryTextColor",
+  success: "successTextColor",
+};
+
 export const Text = ({
   children,
   variant = TEXT_VARIANTS.default,
   align,
   fontWeight,
   className,
+  color,
 }) => {
   return (
     <p
-      className={classNames(className, variant)}
+      className={classNames("Text", className, variant, color)}
       style={{ textAlign: align, fontWeight }}
     >
       {children}

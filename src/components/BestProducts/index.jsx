@@ -1,6 +1,10 @@
 import React from "react";
 import { BestProductsItem } from "../BestProductsItem";
+import { Button, BUTTON_VARIANTS } from "../Button";
+import { Container, CONTAINER_VARIANTS } from "../Container";
 import { Pagination } from "../Pagination";
+import { Text, TEXT_VARIANTS } from "../Text";
+import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
 import "./styles.scss";
 
 const PRODUCTS = [
@@ -43,28 +47,51 @@ const PRODUCTS = [
 
 export const BestProducts = () => {
   return (
-    <section className="selling-products">
-      <div className="content-title-container flex-container">
-        <h6 className="title">Best Selling Products</h6>
-        <button className="sort">
-          <span className="sort-text">SORT BY: </span>
-          <span className="sort-value">Today</span>
-          <i className="mdi mdi-chevron-down ms-1"></i>
-        </button>
-      </div>
-      <ul className="selling-products-content">
-        {PRODUCTS.map(({ name, price, amount, outOfStock, date }, index) => (
-          <BestProductsItem
-            name={name}
-            price={price}
-            amount={amount}
-            outOfStock={outOfStock}
-            date={date}
-            key={index}
-          />
-        ))}
-      </ul>
+    <Container
+      className="best-products"
+      variant={CONTAINER_VARIANTS.contentSection}
+      flex1
+    >
+      <Container
+        variant={CONTAINER_VARIANTS.default}
+        flex
+        spaceBetween
+        alignCenter
+        borderSolid
+      >
+        <Title
+          variant={TITLE_VARIANTS.secondary}
+          weight={TITLE_WEIGHTS.heavy}
+          color={TITLE_COLORS.primary}
+        >
+          Best Selling Products
+        </Title>
+        <Button variant={BUTTON_VARIANTS.transparent}>
+          <Text variant={TEXT_VARIANTS.small} className="sort-text sort-label">
+            SORT BY:{" "}
+          </Text>
+          <Text variant={TEXT_VARIANTS.small} className="sort-text">
+            Today
+            <i className="mdi mdi-chevron-down ms-1"></i>
+          </Text>
+        </Button>
+      </Container>
+      <Container>
+        {PRODUCTS.map(
+          ({ name, price, amount, outOfStock, date, stock }, index) => (
+            <BestProductsItem
+              name={name}
+              price={price}
+              amount={amount}
+              outOfStock={outOfStock}
+              date={date}
+              key={index}
+              stock={stock}
+            />
+          )
+        )}
+      </Container>
       <Pagination itemsNumber={5} totalNumber={25} current={2} last={5} />
-    </section>
+    </Container>
   );
 };

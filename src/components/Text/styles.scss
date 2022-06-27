@@ -1,7 +1,13 @@
 @import "../../variables.scss";
 
-.defaultText {
+.Text {
   font-family: Poppins, sans-serif;
+}
+
+.defaultText {
+  font-size: 14px;
+  font-weight: 400;
+  color: $header-button;
 }
 
 .smallText {
@@ -26,4 +32,12 @@
   white-space: nowrap;
   flex: 1;
   text-align: left;
+}
+
+.primaryTextColor {
+  color: $modal-link;
+}
+
+.successTextColor {
+  color: $success;
 }

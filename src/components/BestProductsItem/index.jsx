@@ -1,4 +1,10 @@
 import React from "react";
+import { Button, BUTTON_VARIANTS } from "../Button";
+import { ColoredText, COLORED_TEXT_VARIANTS } from "../ColoredText";
+import { Container, CONTAINER_VARIANTS } from "../Container";
+import { Img, IMG_VARIANTS } from "../Img";
+import { Text, TEXT_VARIANTS } from "../Text";
+import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
 import "./styles.scss";
 
 export const BestProductsItem = ({
@@ -10,36 +16,72 @@ export const BestProductsItem = ({
   outOfStock,
 }) => {
   return (
-    <li className="product">
-      <div className="product-name">
-        <div className="product-img-container">
-          <img
+    <Container
+      variant={CONTAINER_VARIANTS.defaultSmall}
+      spaceBetween
+      alignCenter
+      borderSolid
+      className="best-products-item"
+    >
+      <Container alignCenter flex>
+        <Container className="product-img-container">
+          <Img
             src="./assets/images/product.png"
             alt="Product"
-            className="product-img"
+            variant={IMG_VARIANTS.secondary}
+            width={40}
+            height={40}
           />
-        </div>
-        <div className="product-info-container">
-          <p className="product-info-value">{name}</p>
-          <p className="product-info-name">{date}</p>
-        </div>
-      </div>
-      <div className="product-info-container">
-        <p className="product-info-value">{price}</p>
-        <p className="product-info-name">Price</p>
-      </div>
-      <div className="product-info-container">
+        </Container>
+        <Container>
+          <Button
+            variant={BUTTON_VARIANTS.productLink}
+            className="sellers-info-link"
+          >
+            {name}
+          </Button>
+          <Text variant={TEXT_VARIANTS.small}>{date}</Text>
+        </Container>
+      </Container>
+      <Container>
+        <Title
+          variant={TITLE_VARIANTS.primary}
+          color={TITLE_COLORS.primary}
+          weight={TITLE_WEIGHTS.normal}
+        >
+          {price}
+        </Title>
+        <Text variant={TEXT_VARIANTS.small}>Price</Text>
+      </Container>
+      <Container>
         {outOfStock ? (
-          <span className="product-info-out">Out of stock</span>
+          <ColoredText
+            className="product-info-out"
+            variant={COLORED_TEXT_VARIANTS.warning}
+          >
+            Out of stock
+          </ColoredText>
         ) : (
-          <p className="product-info-value">{stock}</p>
+          <Title
+            variant={TITLE_VARIANTS.primary}
+            color={TITLE_COLORS.primary}
+            weight={TITLE_WEIGHTS.normal}
+          >
+            {stock}
+          </Title>
         )}
-        <p className="product-info-name">Stock</p>
-      </div>
-      <div className="product-info-container">
-        <p className="product-info-value">{amount}</p>
-        <p className="product-info-name">Amount</p>
-      </div>
-    </li>
+        <Text variant={TEXT_VARIANTS.small}>Stock</Text>
+      </Container>
+      <Container>
+        <Title
+          variant={TITLE_VARIANTS.primary}
+          color={TITLE_COLORS.primary}
+          weight={TITLE_WEIGHTS.normal}
+        >
+          {amount}
+        </Title>
+        <Text variant={TEXT_VARIANTS.small}>Amount</Text>
+      </Container>
+    </Container>
   );
 };

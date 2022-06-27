@@ -11,14 +11,18 @@ import { LanguageSelector } from "../../components/LanguageSelector";
 import { SalesLocations } from "../../components/SalesLocations";
 import { Menu } from "../../components/Menu";
 import { Notifications } from "../../components/Notifications";
-import { Orders } from "../../components/Orders";
+import { RecentOrders } from "../../components/RecentOrders";
 import { Profile } from "../../components/Profile";
 import { RevenueGraph } from "../../components/RevenueGraph";
 import { RightBar } from "../../components/RightBar";
 import { SearchBar } from "../../components/SearchBar";
 import { TopSellers } from "../../components/TopSellers";
 import { Total } from "../../components/Total";
-import { Visits } from "../../components/Visits";
+import { StoreVisits } from "../../components/StoreVisits";
+import {
+  BackgroundWrapper,
+  BACKGROUND_VARIANTS,
+} from "../../components/BackgroundWrapper";
 
 export const Dashboard = () => {
   return (
@@ -64,26 +68,25 @@ export const Dashboard = () => {
           <Breadcrumbs mainRoute="Dashboard" secondaryRoutes={["Dashboard"]} />
 
           <Container flex flex1>
-            <Container
-              className="content-wrapper"
-              variant={CONTAINER_VARIANTS.defaultSmall}
-            >
-              <Total />
-              <Container flex flexWrap>
-                <RevenueGraph />
-                <SalesLocations />
+            <BackgroundWrapper variant={BACKGROUND_VARIANTS.content} flex1>
+              <Container flex1 variant={CONTAINER_VARIANTS.defaultSmall}>
+                <Total />
+                <Container flex flexWrap>
+                  <RevenueGraph />
+                  <SalesLocations />
+                </Container>
+
+                <Container flex>
+                  <BestProducts />
+                  <TopSellers />
+                </Container>
+
+                <Container flex className="recent">
+                  <StoreVisits />
+                  <RecentOrders />
+                </Container>
               </Container>
-
-              <div className="selling flex-container">
-                <BestProducts />
-                <TopSellers />
-              </div>
-
-              <div className="flex-container recent">
-                <Visits />
-                <Orders />
-              </div>
-            </Container>
+            </BackgroundWrapper>
             <RightBar />
           </Container>
           <Footer />

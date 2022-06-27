@@ -68,25 +68,6 @@ body {
   display: flex;
 }
 
-.content-title-container {
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  border-bottom: 1px solid $border-color;
-  .title {
-    font-size: 16px;
-    color: $header-button;
-    font-weight: 500;
-  }
-  .sort {
-    color: $breadcrumb-second;
-    &-text {
-      font-weight: 600;
-      color: $black;
-    }
-  }
-}
-
 .me-1 {
   margin-right: 0.25em;
 }

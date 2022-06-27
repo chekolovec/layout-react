@@ -5,6 +5,8 @@ import styles from "./styles.module.scss";
 export const COLORED_TEXT_VARIANTS = {
   default: "default",
   small: "small",
+  medium: "medium",
+  warning: "warning",
 };
 
 export const COLORED_TEXT_COLORS = {
@@ -12,12 +14,14 @@ export const COLORED_TEXT_COLORS = {
   success: "success",
   failure: "failure",
   secondary: "secondary",
+  pending: "pending",
+  unpaid: "unpaid",
 };
 
 export const ColoredText = ({
   children,
   variant = COLORED_TEXT_VARIANTS.default,
-  color = COLORED_TEXT_COLORS.info,
+  color,
 }) => (
   <span className={classNames(styles[variant], styles[color])}>{children}</span>
 );

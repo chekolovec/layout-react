@@ -1,0 +1,55 @@
+@import "../../variables.scss";
+
+.recent-orders {
+  .table-container {
+    overflow-x: scroll;
+  }
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+    th {
+      padding: 12px;
+      background-color: $border-color;
+      color: $breadcrumb-second;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    td {
+      padding: 12px;
+      white-space: nowrap;
+    }
+    .order {
+      &-id {
+        color: $link;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      &-customer {
+        display: flex;
+        align-items: center;
+        &-img {
+          width: 32px;
+          height: 32px;
+          border-radius: 100%;
+        }
+        &-name {
+          flex-grow: 1;
+          padding-left: 5px;
+        }
+      }
+      &-amount {
+        color: $success;
+      }
+      &-rating {
+        &-container {
+          font-weight: 500;
+        }
+      }
+      &-votes {
+        color: $breadcrumb-second;
+        font-size: 11px;
+      }
+    }
+  }
+}

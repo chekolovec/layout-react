@@ -1,5 +1,13 @@
 import React from "react";
+import { Button, BUTTON_VARIANTS } from "../Button";
+import { Container, CONTAINER_VARIANTS } from "../Container";
 import { OrdersItem } from "../OrdersItem";
+import { Table } from "../Table";
+import { Tbody } from "../Tbody";
+import { Th } from "../Th";
+import { Thead } from "../Thead";
+import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
+import { Tr } from "../Tr";
 import "./styles.scss";
 
 const DATA = [
@@ -60,30 +68,47 @@ const DATA = [
   },
 ];
 
-export const Orders = () => {
+export const RecentOrders = () => {
   return (
-    <section className="orders">
-      <div className="content-title-container flex-container">
-        <h6 className="title">Recent Orders</h6>
-        <button className="generate">
-          <i className="ri-file-list-3-line align-middle"></i>
-          <span className="generate-text">Generate Report</span>
-        </button>
-      </div>
-      <div className="orders-table-container">
-        <table className="orders-table">
-          <thead>
-            <tr>
-              <th>Order ID</th>
-              <th>Customer</th>
-              <th>Product</th>
-              <th>Amount</th>
-              <th>Vendor</th>
-              <th>Status</th>
-              <th>Rating</th>
-            </tr>
-          </thead>
-          <tbody>
+    <Container
+      variant={CONTAINER_VARIANTS.contentSection}
+      className="recent-orders"
+    >
+      <Container
+        variant={CONTAINER_VARIANTS.default}
+        flex
+        spaceBetween
+        alignCenter
+        borderSolid
+      >
+        <Title
+          variant={TITLE_VARIANTS.secondary}
+          weight={TITLE_WEIGHTS.heavy}
+          color={TITLE_COLORS.primary}
+        >
+          Recent Orders
+        </Title>
+        <Button
+          variant={BUTTON_VARIANTS.secondary}
+          iconLeft={<i className="ri-file-list-3-line align-middle"></i>}
+        >
+          Generate Report
+        </Button>
+      </Container>
+      <Container width100 flex1 className="table-container">
+        <Table>
+          <Thead>
+            <Tr>
+              <Th>Order ID</Th>
+              <Th>Customer</Th>
+              <Th>Product</Th>
+              <Th>Amount</Th>
+              <Th>Vendor</Th>
+              <Th>Status</Th>
+              <Th>Rating</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
             {DATA.map(
               (
                 {
@@ -113,9 +138,9 @@ export const Orders = () => {
                 />
               )
             )}
-          </tbody>
-        </table>
-      </div>
-    </section>
+          </Tbody>
+        </Table>
+      </Container>
+    </Container>
   );
 };

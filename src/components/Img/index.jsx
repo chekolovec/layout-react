@@ -3,8 +3,10 @@ import React from "react";
 import styles from "./styles.module.scss";
 
 export const IMG_VARIANTS = {
-  rounded: "rounded",
   primary: "primary",
+  secondary: "secondary",
+  secondaryTransparent: "secondaryTransparent",
+  rounded: "rounded",
   small: "small",
 };
 

@@ -17,6 +17,9 @@ export const BUTTON_VARIANTS = {
   menuTitle: "menuTitle",
   menuItem: "menuItem",
   selector: "selector",
+  transparent: "transparent",
+  productLink: "productLink",
+  pagination: "pagination",
 };
 
 export const COUNTER_VARIANTS = {
@@ -121,6 +124,9 @@ export const Button = ({
       {variant === BUTTON_VARIANTS.primary && children}
       {variant === BUTTON_VARIANTS.tab && children}
       {variant === BUTTON_VARIANTS.selector && children}
+      {variant === BUTTON_VARIANTS.transparent && children}
+      {variant === BUTTON_VARIANTS.productLink && children}
+      {variant === BUTTON_VARIANTS.pagination && children}
     </button>
   );
 };

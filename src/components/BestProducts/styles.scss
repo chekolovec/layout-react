@@ -1,6 +1,6 @@
 @import "../../variables.scss";
 
-.selling {
+.best-products {
   &-products {
     margin: 0 12px;
     background-color: $white;
@@ -8,5 +8,12 @@
     border-radius: 5px;
     flex: 1;
     margin-bottom: 24px;
+  }
+  .sort-text {
+    display: inline;
+  }
+  .sort-label {
+    font-weight: 600;
+    color: $modal-link;
   }
 }

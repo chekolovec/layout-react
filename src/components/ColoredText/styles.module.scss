@@ -16,16 +16,42 @@
   padding: 3px 6px;
 }
 
+.medium {
+  padding: 3px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.warning {
+  color: $notification-counter;
+  background-color: rgba(240, 101, 72, 0.1);
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
 .info {
   color: $pending;
   background-color: rgba(247, 184, 75, 0.1);
 }
 
 .success {
-  background-color: rgba(10, 179, 156, 0.18);
+  color: $success;
+  background-color: rgba(10, 179, 156, 0.1);
 }
 
 .secondary {
   color: $white;
   background-color: rgba(243, 246, 249, 0.1);
+}
+
+.pending {
+  background-color: rgba(247, 184, 75, 0.1);
+  color: $pending;
+}
+.unpaid {
+  background-color: rgba(240, 101, 72, 0.1);
+  color: $notification-counter;
 }

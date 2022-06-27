@@ -1,4 +1,16 @@
 import React from "react";
+import { Button, BUTTON_VARIANTS } from "../Button";
+import {
+  ColoredText,
+  COLORED_TEXT_COLORS,
+  COLORED_TEXT_VARIANTS,
+} from "../ColoredText";
+import { Container } from "../Container";
+import { Img, IMG_VARIANTS } from "../Img";
+import { Span, SPAN_VARIANTS } from "../Span";
+import { Td } from "../Td";
+import { Text, TEXT_COLORS } from "../Text";
+import { Tr } from "../Tr";
 import "./styles.scss";
 
 const STATUS_CLASSES = {
@@ -19,38 +31,45 @@ export const OrdersItem = ({
   votes,
 }) => {
   return (
-    <tr>
-      <td>
-        <a href="/" className="order-id">
+    <Tr className="recent-orders-item">
+      <Td>
+        <Button variant={BUTTON_VARIANTS.link} className="order-id">
           {id}
-        </a>
-      </td>
-      <td>
-        <div className="order-customer">
-          <img src={img} alt="Customer avatar" className="order-customer-img" />
-          <span className="order-customer-name">{name}</span>
-        </div>
-      </td>
-      <td>
-        <span className="order-product">{product}</span>
-      </td>
-      <td>
-        <span className="order-amount">{price}</span>
-      </td>
-      <td>
-        <span className="order-vendor">{vendor}</span>
-      </td>
-      <td>
-        <span className={`order-status ${STATUS_CLASSES[status]}`}>
+        </Button>
+      </Td>
+      <Td>
+        <Container flex alignCenter>
+          <Img variant={IMG_VARIANTS.primary} src={img} alt="Customer avatar" />
+          <Text color={TEXT_COLORS.primary} className="customer-name">
+            {name}
+          </Text>
+        </Container>
+      </Td>
+      <Td>
+        <Text color={TEXT_COLORS.primary}>{product}</Text>
+      </Td>
+      <Td>
+        <Text color={TEXT_COLORS.success}>{price}</Text>
+      </Td>
+      <Td>
+        <Text color={TEXT_COLORS.primary}>{vendor}</Text>
+      </Td>
+      <Td>
+        <ColoredText
+          variant={COLORED_TEXT_VARIANTS.medium}
+          color={COLORED_TEXT_COLORS[STATUS_CLASSES[status]]}
+        >
           {status}
-        </span>
-      </td>
-      <td>
-        <div className="order-rating-container">
-          <span className="order-rating">{rating}</span>
-          <span className="order-votes">({votes} votes)</span>
-        </div>
-      </td>
-    </tr>
+        </ColoredText>
+      </Td>
+      <Td>
+        <Container>
+          <Text className="rating-text">
+            {rating}
+            <Span variant={SPAN_VARIANTS.primary}> ({votes} votes)</Span>
+          </Text>
+        </Container>
+      </Td>
+    </Tr>
   );
 };

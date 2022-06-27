@@ -273,3 +273,22 @@
     color: $white;
   }
 }
+
+.productLink {
+  color: $header-button;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pagination {
+  padding: 4px 8px;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  &:hover {
+    background-color: $pagination-hover;
+  }
+  &.active {
+    background-color: $link;
+    color: $white;
+  }
+}

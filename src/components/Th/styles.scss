@@ -1,0 +1,9 @@
+@import "../../variables.scss";
+
+.table-header {
+  padding: 12px;
+  background-color: $border-color;
+  color: $breadcrumb-second;
+  font-weight: 600;
+  font-size: 14px;
+}
