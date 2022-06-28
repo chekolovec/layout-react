@@ -23,6 +23,18 @@
   font-size: 23px;
 }
 
+.secondary {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  margin-right: 15px;
+  font-size: 12px;
+  overflow: hidden;
+}
+
 .reward {
   background-color: rgba(41, 156, 219, 0.18);
   color: $blue;
@@ -48,4 +60,14 @@
 .balance {
   background-color: rgba(64, 81, 137, 0.18);
   color: rgb(64, 81, 137);
+}
+
+.offer {
+  background-color: rgb(53, 119, 241);
+  color: $white;
+}
+
+.report {
+  background-color: rgba(41, 156, 219, 0.18);
+  color: $blue;
 }

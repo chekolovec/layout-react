@@ -1,40 +1,42 @@
 @import "../../variables.scss";
 
 .total {
-  &-title {
-    padding-bottom: 5px;
-  }
-  &-subtitle {
-    color: $breadcrumb-second;
-  }
-  &-box {
-    background-color: $white;
-    border-radius: 5px;
-    box-shadow: 0px 1px 2px $total-shadow;
-    margin: 0 12px;
-    margin-bottom: 20px;
-    transition: all 0.4s;
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0px 5px 10px $total-shadow-hover;
+  .total {
+    &-title {
+      padding-bottom: 5px;
     }
-    @media (max-width: 1220px) {
-      flex: 40%;
+    &-subtitle {
+      color: $breadcrumb-second;
     }
-    .price {
-      &-change {
-        &-container {
-          color: $neutral;
-          &.success {
-            color: $success;
+    &-box {
+      background-color: $white;
+      border-radius: 5px;
+      box-shadow: 0px 1px 2px $total-shadow;
+      margin: 0 12px;
+      margin-bottom: 20px;
+      transition: all 0.4s;
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 5px 10px $total-shadow-hover;
+      }
+      @media (max-width: 1220px) {
+        flex: 40%;
+      }
+      .price {
+        &-change {
+          &-container {
+            color: $neutral;
+            &.success {
+              color: $success;
+            }
+            &.failure {
+              color: $failure;
+            }
           }
-          &.failure {
-            color: $failure;
+          &-text {
+            padding-left: 5px;
+            white-space: nowrap;
           }
-        }
-        &-text {
-          padding-left: 5px;
-          white-space: nowrap;
         }
       }
     }

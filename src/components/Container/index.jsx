@@ -8,6 +8,7 @@ export const CONTAINER_VARIANTS = {
   secondary: "secondary",
   small: "small",
   medium: "medium",
+  middle: "middle",
   big: "big",
   large: "large",
   contentSection: "contentSection",

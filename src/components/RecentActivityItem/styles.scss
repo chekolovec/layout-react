@@ -1,22 +1,12 @@
 @import "../../variables.scss";
 
-.rightbar {
+.recent-activity-item {
+  &.last {
+    .activity-line {
+      display: none;
+    }
+  }
   .activity {
-    &-list {
-      max-height: 410px;
-      overflow: scroll;
-      padding-right: 16px;
-    }
-    &-item {
-      display: flex;
-      position: relative;
-      padding-bottom: 15px;
-      &.last {
-        .activity-line {
-          display: none;
-        }
-      }
-    }
     &-line {
       position: absolute;
       top: 26px;
@@ -25,76 +15,32 @@
       border-left: 1px dashed $border-color;
     }
     &-img {
-      width: 26px;
-      height: 26px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 100%;
       margin-right: 15px;
-      font-size: 12px;
-      overflow: hidden;
-      &.success {
-        background-color: rgba(10, 179, 156, 0.18);
-        color: $success;
-      }
-      &.failure {
-        background-color: rgba(240, 101, 72, 0.18);
-        color: $failure;
-      }
-      &.offer {
-        background-color: rgb(53, 119, 241);
-        color: $white;
-      }
-      &.report {
-        background-color: rgba(41, 156, 219, 0.18);
-        color: $blue;
-      }
     }
     &-title {
-      color: $header-button;
-      font-size: 13px;
-      font-weight: 500;
       padding-bottom: 5px;
     }
     &-link {
-      text-decoration: none;
       color: $blue;
+      font-weight: 500;
       &-warning {
         color: $pending;
       }
     }
     &-text {
-      color: $breadcrumb-second;
-      font-size: 13px;
       &.comment {
         font-style: italic;
       }
     }
-    &-date {
-      font-size: 11px;
-      color: $breadcrumb-second;
-    }
     &-pictures {
       &-wrapper {
         margin-top: 5px;
-        display: flex;
-        padding: 4px;
         border: 1px dashed $border-color;
+        gap: 5px;
       }
     }
-    &-picture {
-      width: 47px;
-      height: 47px;
-      &-button {
-        padding: 4px;
-        background-color: rgb(243, 246, 249);
-        margin: 4px;
-      }
-    }
-    &-avatar {
-      width: 100%;
-      height: 100%;
+    &-picture-button {
+      display: flex;
     }
     &-warning {
       color: $notification-counter;

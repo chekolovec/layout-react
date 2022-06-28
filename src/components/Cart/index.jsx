@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Button, BUTTON_VARIANTS } from "../Button";
-import { ColoredText } from "../ColoredText";
+import { ColoredText, COLORED_TEXT_COLORS } from "../ColoredText";
 import { Container, CONTAINER_VARIANTS } from "../Container";
 import { Img, IMG_VARIANTS } from "../Img";
 import { ModalContainer } from "../ModalContainer";
@@ -33,7 +33,7 @@ export const Cart = () => {
           >
             My cart
           </Title>
-          <ColoredText>5 items</ColoredText>
+          <ColoredText color={COLORED_TEXT_COLORS.info}>5 items</ColoredText>
         </Container>
         <ScrollContainer maxHeight={300}>
           <Container
@@ -204,7 +204,7 @@ export const Cart = () => {
               </Title>
               <Text variant={TEXT_VARIANTS.medium}>$3399.00</Text>
             </Container>
-            <Button variant={BUTTON_VARIANTS.primary}>Checkout</Button>
+            <Button variant={BUTTON_VARIANTS.primaryDark}>Checkout</Button>
           </Container>
         </Container>
       </ModalContainer>

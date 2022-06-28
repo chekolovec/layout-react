@@ -26,21 +26,13 @@ import {
 
 export const Dashboard = () => {
   return (
-    <Container className="main-container">
+    <Container flex className="main-container">
       <Menu />
 
       <Container maxHeight="100%" flex flex1 column>
         <Header>
-          <Container
-            alignCenter
-            paddingTop={16}
-            paddingRight={28}
-            paddingBottom={16}
-            paddingLeft={10}
-            flex
-          >
-            <SearchBar />
-          </Container>
+          <SearchBar />
+
           <Container alignCenter flex>
             <Container alignCenter flex paddingRight={16}>
               <LanguageSelector />
@@ -81,7 +73,7 @@ export const Dashboard = () => {
                   <TopSellers />
                 </Container>
 
-                <Container flex className="recent">
+                <Container flex>
                   <StoreVisits />
                   <RecentOrders />
                 </Container>

@@ -31,7 +31,7 @@ export const Apps = () => {
           </Title>
           <Button
             variant={BUTTON_VARIANTS.secondary}
-            iconRight={<i className="ri-arrow-right-s-line align-middle"></i>}
+            iconRight={<i className="ri-arrow-right-s-line"></i>}
           >
             View All Apps
           </Button>

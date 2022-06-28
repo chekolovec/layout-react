@@ -6,6 +6,8 @@ export const SPAN_VARIANTS = {
   primary: "primary",
 };
 
-export const Span = ({ children, variant }) => (
-  <span className={classNames("custom-span", variant)}>{children}</span>
+export const Span = ({ children, variant, className }) => (
+  <span className={classNames("custom-span", className, variant)}>
+    {children}
+  </span>
 );

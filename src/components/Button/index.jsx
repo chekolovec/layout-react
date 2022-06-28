@@ -13,6 +13,7 @@ export const BUTTON_VARIANTS = {
   link: "link",
   linkUnderlined: "linkUnderlined",
   primary: "primary",
+  primaryDark: "primaryDark",
   tab: "tab",
   menuTitle: "menuTitle",
   menuItem: "menuItem",
@@ -122,6 +123,7 @@ export const Button = ({
       {variant === BUTTON_VARIANTS.linkUnderlined && children}
       {variant === BUTTON_VARIANTS.default && children}
       {variant === BUTTON_VARIANTS.primary && children}
+      {variant === BUTTON_VARIANTS.primaryDark && children}
       {variant === BUTTON_VARIANTS.tab && children}
       {variant === BUTTON_VARIANTS.selector && children}
       {variant === BUTTON_VARIANTS.transparent && children}

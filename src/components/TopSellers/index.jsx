@@ -1,5 +1,4 @@
 import React from "react";
-import "./styles.scss";
 import { TopSellersItem } from "../TopSellersItem";
 import { Pagination } from "../Pagination";
 import { Container, CONTAINER_VARIANTS } from "../Container";

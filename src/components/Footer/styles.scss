@@ -2,7 +2,7 @@
 
 .footer {
   padding: 20px 12px;
-  display: flex;
-  justify-content: space-between;
-  color: $footer-color;
+  .footer-text {
+    color: $footer-color;
+  }
 }

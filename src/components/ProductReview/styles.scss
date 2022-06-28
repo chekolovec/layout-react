@@ -1,34 +1,21 @@
 @import "../../variables.scss";
 
-.rightbar {
-  .reviews {
-    &-item {
-      padding: 16px;
-      border: 1px dashed $border-color;
-      display: flex;
-      color: $breadcrumb-second;
-      margin: 10px 0;
-      &-img {
-        width: 48px;
-        height: 48px;
-        border-radius: 5px;
-        background-color: $border-color;
-      }
-    }
-    &-text {
-      font-style: italic;
-    }
-    &-author {
-      text-align: right;
-    }
-    &-info {
-      padding-left: 15px;
-    }
-    &-rating {
-      display: flex;
-      color: $pending;
-      font-size: 12px;
-      padding: 5px 0;
-    }
+.product-review-item {
+  border: 1px dashed $border-color;
+  margin: 10px 0;
+
+  .item-text {
+    font-style: italic;
+  }
+  .item-author {
+    text-align: right;
+  }
+  .item-info {
+    padding-left: 15px;
+  }
+  .item-rating {
+    color: $pending;
+    font-size: 12px;
+    padding: 5px 0;
   }
 }

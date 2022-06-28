@@ -135,7 +135,6 @@
 .link {
   color: $header-button;
   font-weight: 600;
-  padding-bottom: 5px;
 }
 
 .linkUnderlined {
@@ -147,6 +146,18 @@
 .primary {
   color: $add-color;
   background-color: rgba(10, 179, 156, 0.1);
+  flex: 1;
+  padding: 8px 14px;
+  border-radius: 3px;
+  &:hover {
+    background-color: $add-color-dark;
+    color: $white;
+  }
+}
+
+.primaryDark {
+  color: $white;
+  background-color: $add-color;
   flex: 1;
   padding: 8px 14px;
   border-radius: 3px;

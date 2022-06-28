@@ -1,32 +1,32 @@
 import React from "react";
+import { Container } from "../Container";
+import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
+import { Span, SPAN_VARIANTS } from "../Span";
 import "./styles.scss";
 
-export const IMG_BACKGROUND_ENUM = {
-  success: "success",
-  failure: "failure",
-  offer: "offer",
-  report: "report",
-};
-
-export const RecentActivityItem = ({
-  title,
-  content,
-  date,
-  img,
-  imgBackground,
-  last,
-}) => {
+export const RecentActivityItem = ({ title, content, date, img, last }) => {
   return (
-    <div className={`activity-item ${last ? "last" : ""}`}>
-      <div className="activity-left">
-        <div className="activity-line"></div>
-        <div className={`activity-img ${imgBackground}`}>{img}</div>
-      </div>
-      <div className="activity-right">
-        <h6 className="activity-title">{title}</h6>
+    <Container
+      flex
+      className={`recent-activity-item ${last ? "last" : ""}`}
+      paddingBottom={15}
+    >
+      <Container className="activity-left" relative>
+        <Container className="activity-line"></Container>
+        {img}
+      </Container>
+      <Container className="activity-right">
+        <Title
+          variant={TITLE_VARIANTS.primary}
+          color={TITLE_COLORS.primary}
+          weight={TITLE_WEIGHTS.heavy}
+          className="activity-title"
+        >
+          {title}
+        </Title>
         {content}
-        <span className="activity-date">{date}</span>
-      </div>
-    </div>
+        <Span variant={SPAN_VARIANTS.primary}>{date}</Span>
+      </Container>
+    </Container>
   );
 };

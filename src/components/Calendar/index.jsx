@@ -1,15 +1,17 @@
 import React from "react";
 import "./styles.scss";
+import { Container } from "../Container";
+import { Span } from "../Span";
 
 export const Calendar = () => {
   return (
-    <div className="calendar">
-      <div className="calendar-text-wrapper">
-        <span className="calendar-text">01 Jan 2022 to 31 Jan 2022</span>
-      </div>
-      <div className="calendar-icon-wrapper">
+    <Container flex alignCenter className="calendar">
+      <Container flex flex1 alignCenter className="calendar-text-wrapper">
+        <Span className="calendar-text">01 Jan 2022 to 31 Jan 2022</Span>
+      </Container>
+      <Container flex alignCenter className="calendar-icon-wrapper">
         <i className="ri-calendar-2-line icon"></i>
-      </div>
-    </div>
+      </Container>
+    </Container>
   );
 };

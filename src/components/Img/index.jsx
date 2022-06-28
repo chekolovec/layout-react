@@ -8,6 +8,8 @@ export const IMG_VARIANTS = {
   secondaryTransparent: "secondaryTransparent",
   rounded: "rounded",
   small: "small",
+  big: "big",
+  icon: "icon",
 };
 
 export const Img = ({ variant, src, alt, width, height, className }) => (

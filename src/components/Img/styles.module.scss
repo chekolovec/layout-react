@@ -16,8 +16,21 @@
   border-radius: 100%;
 }
 
+.icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 100%;
+}
+
 .small {
   border-radius: 5px;
+}
+
+.big {
+  width: 48px;
+  height: 48px;
+  border-radius: 5px;
+  background-color: $border-color;
 }
 
 .secondary {

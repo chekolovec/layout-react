@@ -4,6 +4,7 @@ import { Container, CONTAINER_VARIANTS } from "../Container";
 import { Text, TEXT_VARIANTS } from "../Text";
 import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
 import "./styles.scss";
+import { Img } from "../Img";
 
 export const RevenueGraph = () => {
   return (
@@ -123,7 +124,7 @@ export const RevenueGraph = () => {
           <Text variant={TEXT_VARIANTS.small}>Conversation Ratio</Text>
         </Container>
       </Container>
-      <img
+      <Img
         className="revenue-graph-picture"
         src="./assets/images/graph.png"
         alt="Graph"

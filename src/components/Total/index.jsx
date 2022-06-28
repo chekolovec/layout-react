@@ -48,7 +48,7 @@ const TOTAL_TABS = [
 
 export const Total = () => {
   return (
-    <Container flex1>
+    <Container className="total" flex1>
       <Container
         flex
         spaceBetween
@@ -126,10 +126,10 @@ export const Total = () => {
                   })}
                 >
                   {tab.trend === "positive" && (
-                    <i className="ri-arrow-right-up-line fs-13 align-middle"></i>
+                    <i className="ri-arrow-right-up-line fs-13"></i>
                   )}
                   {tab.trend === "negative" && (
-                    <i className="ri-arrow-right-down-line fs-13 align-middle"></i>
+                    <i className="ri-arrow-right-down-line fs-13"></i>
                   )}
                   <Text className="price-change-text">{tab.change}</Text>
                 </Container>
