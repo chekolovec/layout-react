@@ -1,7 +1,12 @@
 import React from "react";
-import { Container } from "../Container";
-import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
-import { Span, SPAN_VARIANTS } from "../Span";
+import { Container } from "../../baseComponents/Container";
+import {
+  Title,
+  TITLE_COLORS,
+  TITLE_VARIANTS,
+  TITLE_WEIGHTS,
+} from "../../baseComponents/Title";
+import { Span, SPAN_VARIANTS } from "../../baseComponents/Span";
 import "./styles.scss";
 
 export const RecentActivityItem = ({ title, content, date, img, last }) => {

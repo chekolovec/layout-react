@@ -1,11 +1,20 @@
 import classNames from "classnames";
 import React from "react";
-import { Button, BUTTON_COLORS, BUTTON_VARIANTS } from "../Button";
+import {
+  Button,
+  BUTTON_COLORS,
+  BUTTON_VARIANTS,
+} from "../../baseComponents/Button";
 import { Calendar } from "../Calendar";
-import { Container, CONTAINER_VARIANTS } from "../Container";
-import { Icon, ICON_VARIANTS } from "../Icon";
-import { Text } from "../Text";
-import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
+import { Container, CONTAINER_VARIANTS } from "../../baseComponents/Container";
+import { Icon, ICON_NAMES, ICON_VARIANTS } from "../../baseComponents/Icon";
+import { Text } from "../../baseComponents/Text";
+import {
+  Title,
+  TITLE_COLORS,
+  TITLE_VARIANTS,
+  TITLE_WEIGHTS,
+} from "../../baseComponents/Title";
 import "./styles.scss";
 
 const TOTAL_TABS = [
@@ -79,7 +88,7 @@ export const Total = () => {
               alignItems="center"
               flex
             >
-              <i className="ri-add-circle-line align-middle me-1"></i>
+              <Icon variant={ICON_VARIANTS.italic} name={ICON_NAMES.scope} />
               Add product
             </Button>
           </Container>
@@ -93,7 +102,7 @@ export const Total = () => {
               variant={BUTTON_VARIANTS.primary}
               color={BUTTON_COLORS.cian}
             >
-              <i className="ri-pulse-line"></i>
+              <Icon variant={ICON_VARIANTS.italic} name={ICON_NAMES.pulse} />
             </Button>
           </Container>
         </Container>
@@ -126,10 +135,16 @@ export const Total = () => {
                   })}
                 >
                   {tab.trend === "positive" && (
-                    <i className="ri-arrow-right-up-line fs-13"></i>
+                    <Icon
+                      variant={ICON_VARIANTS.italic}
+                      name={ICON_NAMES.arrowPositive}
+                    />
                   )}
                   {tab.trend === "negative" && (
-                    <i className="ri-arrow-right-down-line fs-13"></i>
+                    <Icon
+                      variant={ICON_VARIANTS.italic}
+                      name={ICON_NAMES.arrowNegative}
+                    />
                   )}
                   <Text className="price-change-text">{tab.change}</Text>
                 </Container>

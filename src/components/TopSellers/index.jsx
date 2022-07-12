@@ -1,10 +1,16 @@
 import React from "react";
 import { TopSellersItem } from "../TopSellersItem";
 import { Pagination } from "../Pagination";
-import { Container, CONTAINER_VARIANTS } from "../Container";
-import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
-import { Button, BUTTON_VARIANTS } from "../Button";
-import { Text, TEXT_VARIANTS } from "../Text";
+import { Container, CONTAINER_VARIANTS } from "../../baseComponents/Container";
+import {
+  Title,
+  TITLE_COLORS,
+  TITLE_VARIANTS,
+  TITLE_WEIGHTS,
+} from "../../baseComponents/Title";
+import { Button, BUTTON_VARIANTS } from "../../baseComponents/Button";
+import { Text, TEXT_VARIANTS } from "../../baseComponents/Text";
+import { Icon, ICON_NAMES, ICON_VARIANTS } from "../../baseComponents/Icon";
 
 const DATA = [
   {
@@ -79,7 +85,10 @@ export const TopSellers = () => {
         <Button variant={BUTTON_VARIANTS.transparent}>
           <Text variant={TEXT_VARIANTS.small} className="sort-text">
             Report
-            <i className="mdi mdi-chevron-down ms-1"></i>
+            <Icon
+              variant={ICON_VARIANTS.italic}
+              name={ICON_NAMES.chevronDown}
+            />
           </Text>
         </Button>
       </Container>

@@ -1,16 +1,65 @@
 import React from "react";
 import { useState } from "react";
-import { Button, BUTTON_VARIANTS } from "../Button";
+import { Button, BUTTON_VARIANTS } from "../../baseComponents/Button";
 import {
   ColoredText,
   COLORED_TEXT_COLORS,
   COLORED_TEXT_VARIANTS,
-} from "../ColoredText";
-import { Container, CONTAINER_VARIANTS } from "../Container";
-import { Img, IMG_VARIANTS } from "../Img";
-import { ModalContainer } from "../ModalContainer";
-import { Text, TEXT_VARIANTS } from "../Text";
-import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
+} from "../../baseComponents/ColoredText";
+import { Container, CONTAINER_VARIANTS } from "../../baseComponents/Container";
+import { ICON_NAMES } from "../../baseComponents/Icon";
+import { Img, IMG_VARIANTS } from "../../baseComponents/Img";
+import { ModalContainer } from "../../baseComponents/ModalContainer";
+import { Text, TEXT_VARIANTS } from "../../baseComponents/Text";
+import {
+  Title,
+  TITLE_COLORS,
+  TITLE_VARIANTS,
+  TITLE_WEIGHTS,
+} from "../../baseComponents/Title";
+
+const TOP_ITEMS = [
+  {
+    label: "Profile",
+    iconName: ICON_NAMES.account,
+  },
+  {
+    label: "Messages",
+    iconName: ICON_NAMES.message,
+  },
+  {
+    label: "Taskboard",
+    iconName: ICON_NAMES.calendarCheck,
+  },
+  {
+    label: "Help",
+    iconName: ICON_NAMES.lifebuoy,
+  },
+];
+
+const BOTTOM_ITEMS = [
+  {
+    label: (
+      <>
+        Balance: <b>$5971.67</b>
+      </>
+    ),
+    iconName: ICON_NAMES.wallet,
+  },
+  {
+    label: "Settings",
+    iconName: ICON_NAMES.cog,
+    new: true,
+  },
+  {
+    label: "Lock Screen",
+    iconName: ICON_NAMES.lock,
+  },
+  {
+    label: "Logout",
+    iconName: ICON_NAMES.logout,
+  },
+];
 
 export const Profile = () => {
   const [modalShown, toggleModal] = useState(false);
@@ -59,63 +108,34 @@ export const Profile = () => {
           </Title>
         </Container>
         <Container width100 paddingBottom={10} borderSolid>
-          <Button
-            variant={BUTTON_VARIANTS.list}
-            iconName="mdi mdi-account-circle text-muted fs-16 align-middle me-1"
-          >
-            Profile
-          </Button>
-          <Button
-            variant={BUTTON_VARIANTS.list}
-            iconName="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"
-          >
-            Messages
-          </Button>
-          <Button
-            variant={BUTTON_VARIANTS.list}
-            iconName="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"
-          >
-            Taskboard
-          </Button>
-          <Button
-            variant={BUTTON_VARIANTS.list}
-            iconName="mdi mdi-lifebuoy text-muted fs-16 align-middle me-1"
-          >
-            Help
-          </Button>
+          {TOP_ITEMS.map((item) => (
+            <Button
+              key={item.label}
+              variant={BUTTON_VARIANTS.list}
+              iconName={item.iconName}
+            >
+              {item.label}
+            </Button>
+          ))}
         </Container>
         <Container width100 paddingTop={10}>
-          <Button
-            variant={BUTTON_VARIANTS.list}
-            iconName="mdi mdi-wallet text-muted fs-16 align-middle me-1"
-          >
-            Balance: <b>$5971.67</b>
-          </Button>
-          <Button
-            variant={BUTTON_VARIANTS.list}
-            iconName="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"
-          >
-            Settings
-            <ColoredText
-              color={COLORED_TEXT_COLORS.success}
-              variant={COLORED_TEXT_VARIANTS.small}
-              colo
+          {BOTTOM_ITEMS.map((item) => (
+            <Button
+              key={item.label}
+              variant={BUTTON_VARIANTS.list}
+              iconName={item.iconName}
             >
-              New
-            </ColoredText>
-          </Button>
-          <Button
-            variant={BUTTON_VARIANTS.list}
-            iconName="mdi mdi-lock text-muted fs-16 align-middle me-1"
-          >
-            Lock Screen
-          </Button>
-          <Button
-            variant={BUTTON_VARIANTS.list}
-            iconName="mdi mdi-logout text-muted fs-16 align-middle me-1"
-          >
-            Logout
-          </Button>
+              {item.label}
+              {item.new && (
+                <ColoredText
+                  color={COLORED_TEXT_COLORS.success}
+                  variant={COLORED_TEXT_VARIANTS.small}
+                >
+                  New
+                </ColoredText>
+              )}
+            </Button>
+          ))}
         </Container>
       </ModalContainer>
     </Container>

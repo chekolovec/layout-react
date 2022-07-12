@@ -1,7 +1,8 @@
 import React from "react";
 import "./styles.scss";
-import { Container } from "../Container";
-import { Span } from "../Span";
+import { Container } from "../../baseComponents/Container";
+import { Span } from "../../baseComponents/Span";
+import { Icon, ICON_NAMES, ICON_VARIANTS } from "../../baseComponents/Icon";
 
 export const Calendar = () => {
   return (
@@ -10,7 +11,7 @@ export const Calendar = () => {
         <Span className="calendar-text">01 Jan 2022 to 31 Jan 2022</Span>
       </Container>
       <Container flex alignCenter className="calendar-icon-wrapper">
-        <i className="ri-calendar-2-line icon"></i>
+        <Icon variant={ICON_VARIANTS.italic} name={ICON_NAMES.calendar} />
       </Container>
     </Container>
   );

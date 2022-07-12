@@ -1,10 +1,18 @@
 import React from "react";
-import { Button, BUTTON_VARIANTS } from "../Button";
-import { ColoredText, COLORED_TEXT_VARIANTS } from "../ColoredText";
-import { Container, CONTAINER_VARIANTS } from "../Container";
-import { Img, IMG_VARIANTS } from "../Img";
-import { Text, TEXT_VARIANTS } from "../Text";
-import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
+import { Button, BUTTON_VARIANTS } from "../../baseComponents/Button";
+import {
+  ColoredText,
+  COLORED_TEXT_VARIANTS,
+} from "../../baseComponents/ColoredText";
+import { Container, CONTAINER_VARIANTS } from "../../baseComponents/Container";
+import { Img, IMG_VARIANTS } from "../../baseComponents/Img";
+import { Text, TEXT_VARIANTS } from "../../baseComponents/Text";
+import {
+  Title,
+  TITLE_COLORS,
+  TITLE_VARIANTS,
+  TITLE_WEIGHTS,
+} from "../../baseComponents/Title";
 import "./styles.scss";
 
 export const BestProductsItem = ({

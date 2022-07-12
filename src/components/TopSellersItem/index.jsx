@@ -1,9 +1,15 @@
 import React from "react";
-import { Button, BUTTON_VARIANTS } from "../Button";
-import { Container, CONTAINER_VARIANTS } from "../Container";
-import { Img, IMG_VARIANTS } from "../Img";
-import { Text, TEXT_VARIANTS } from "../Text";
-import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
+import { Button, BUTTON_VARIANTS } from "../../baseComponents/Button";
+import { Container, CONTAINER_VARIANTS } from "../../baseComponents/Container";
+import { Icon, ICON_NAMES, ICON_VARIANTS } from "../../baseComponents/Icon";
+import { Img, IMG_VARIANTS } from "../../baseComponents/Img";
+import { Text, TEXT_VARIANTS } from "../../baseComponents/Text";
+import {
+  Title,
+  TITLE_COLORS,
+  TITLE_VARIANTS,
+  TITLE_WEIGHTS,
+} from "../../baseComponents/Title";
 import "./styles.scss";
 
 export const TopSellersItem = ({
@@ -69,7 +75,7 @@ export const TopSellersItem = ({
         </Title>
       </Container>
       <Container className="rating-container" flex justifyCenter alignCenter>
-        <i className="ri-bar-chart-fill text-success fs-16 align-middle ms-2 sellers-info-icon"></i>
+        <Icon variant={ICON_VARIANTS.italic} name={ICON_NAMES.barChart} />
       </Container>
     </Container>
   );

@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React from "react";
-import { Text, TEXT_VARIANTS } from "../Text";
+import { Text, TEXT_VARIANTS } from "../../baseComponents/Text";
+import { Icon, ICON_VARIANTS } from "../Icon";
 import styles from "./styles.module.scss";
 
 export const BUTTON_VARIANTS = {
@@ -92,7 +93,13 @@ export const Button = ({
           {imgSrc && (
             <img src={imgSrc} alt="List item" className={styles.listImg} />
           )}
-          {iconName && <i className={`${styles.listIcon} ${iconName}`}></i>}
+          {iconName && (
+            <Icon
+              variant={ICON_VARIANTS.italic}
+              name={iconName}
+              className={`${styles.listIcon}`}
+            />
+          )}
           <Text variant={TEXT_VARIANTS.noWrap}>{children}</Text>
         </>
       )}

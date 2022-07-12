@@ -2,9 +2,9 @@ import React from "react";
 import { Apps } from "../../components/Apps";
 import { BestProducts } from "../../components/BestProducts";
 import { Breadcrumbs } from "../../components/Breadcrumbs";
-import { Button, BUTTON_VARIANTS } from "../../components/Button";
+import { Button, BUTTON_VARIANTS } from "../../baseComponents/Button";
 import { Cart } from "../../components/Cart";
-import { Container, CONTAINER_VARIANTS } from "../../components/Container";
+import { Container, CONTAINER_VARIANTS } from "../../baseComponents/Container";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { LanguageSelector } from "../../components/LanguageSelector";
@@ -22,7 +22,7 @@ import { StoreVisits } from "../../components/StoreVisits";
 import {
   BackgroundWrapper,
   BACKGROUND_VARIANTS,
-} from "../../components/BackgroundWrapper";
+} from "../../baseComponents/BackgroundWrapper";
 
 export const Dashboard = () => {
   return (

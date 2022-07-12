@@ -1,20 +1,75 @@
 import React from "react";
 import { useState } from "react";
-import { BackgroundWrapper, BACKGROUND_VARIANTS } from "../BackgroundWrapper";
+import {
+  BackgroundWrapper,
+  BACKGROUND_VARIANTS,
+} from "../../baseComponents/BackgroundWrapper";
 import {
   Button,
   BUTTON_COLORS,
   BUTTON_VARIANTS,
   COUNTER_VARIANTS,
-} from "../Button";
-import { Checkbox } from "../Checkbox";
-import { ColoredText, COLORED_TEXT_COLORS } from "../ColoredText";
-import { Container, CONTAINER_VARIANTS } from "../Container";
-import { Icon, ICON_BACKGROUND } from "../Icon";
-import { Img, IMG_VARIANTS } from "../Img";
-import { ModalContainer } from "../ModalContainer";
-import { Text, TEXT_VARIANTS } from "../Text";
-import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
+} from "../../baseComponents/Button";
+import { Checkbox } from "../../baseComponents/Checkbox";
+import {
+  ColoredText,
+  COLORED_TEXT_COLORS,
+} from "../../baseComponents/ColoredText";
+import { Container, CONTAINER_VARIANTS } from "../../baseComponents/Container";
+import {
+  Icon,
+  ICON_BACKGROUND,
+  ICON_NAMES,
+  ICON_VARIANTS,
+} from "../../baseComponents/Icon";
+import { Img, IMG_VARIANTS } from "../../baseComponents/Img";
+import { ModalContainer } from "../../baseComponents/ModalContainer";
+import { Span } from "../../baseComponents/Span";
+import { Text, TEXT_VARIANTS } from "../../baseComponents/Text";
+import {
+  Title,
+  TITLE_COLORS,
+  TITLE_VARIANTS,
+  TITLE_WEIGHTS,
+} from "../../baseComponents/Title";
+
+const NOTIFICATIONS = [
+  {
+    icon: ICON_NAMES.badgeCheck,
+    iconBackground: ICON_BACKGROUND.reward,
+    title: (
+      <>
+        Your <b>Elite</b> author Graphic Optimization
+        <Span className="reward"> reward </Span>
+        is ready!
+      </>
+    ),
+    time: "Just 30 sec ago",
+  },
+  {
+    img: "./assets/images/avatar-2.jpeg",
+    title: "Angela Bernier",
+    body: "Answered to your comment on the cash flow forecast's graph 🔔.",
+    time: "Just 30 sec ago",
+  },
+  {
+    icon: ICON_NAMES.quote,
+    iconBackground: ICON_BACKGROUND.success,
+    title: (
+      <>
+        You have received
+        <Span className="success"> 20</Span> new messages in the conversation
+      </>
+    ),
+    time: "2 hrs ago",
+  },
+  {
+    img: "./assets/images/avatar-2.jpeg",
+    title: "Angela Bernier",
+    body: "Answered to your comment on the cash flow forecast's graph 🔔.",
+    time: "48 min ago",
+  },
+];
 
 export const Notifications = () => {
   const [modalShown, toggleModal] = useState(false);
@@ -59,134 +114,55 @@ export const Notifications = () => {
           </BackgroundWrapper>
           <BackgroundWrapper variant={BACKGROUND_VARIANTS.white}>
             <Container variant={CONTAINER_VARIANTS.big} maxHeight={320} scroll>
-              <Button>
-                <Container
-                  variant={CONTAINER_VARIANTS.secondary}
-                  flex
-                  paddingRight={30}
-                >
-                  <Container paddingRight={16}>
-                    <Icon background={ICON_BACKGROUND.reward}>
-                      <i className="bx bx-badge-check"></i>
-                    </Icon>
+              {NOTIFICATIONS.map((notification, index) => (
+                <Button key={notification.title + index}>
+                  <Container
+                    variant={CONTAINER_VARIANTS.secondary}
+                    flex
+                    paddingRight={30}
+                  >
+                    <Container paddingRight={16}>
+                      {notification.icon ? (
+                        <Icon background={notification.iconBackground}>
+                          <Icon
+                            variant={ICON_VARIANTS.italic}
+                            name={notification.icon}
+                          />
+                        </Icon>
+                      ) : (
+                        <Img
+                          src={notification.img}
+                          alt="Item"
+                          variant={IMG_VARIANTS.primary}
+                        />
+                      )}
+                    </Container>
+                    <Container paddingRight={10}>
+                      <Title
+                        variant={TITLE_VARIANTS.primary}
+                        weight={TITLE_WEIGHTS.heavy}
+                        color={TITLE_COLORS.primary}
+                        textAlign="left"
+                      >
+                        {notification.title}
+                      </Title>
+                      {notification.body && (
+                        <Text variant={TEXT_VARIANTS.secondary}>
+                          {notification.body}
+                        </Text>
+                      )}
+                      <Text variant={TEXT_VARIANTS.secondary}>
+                        <Icon
+                          variant={ICON_VARIANTS.italic}
+                          name={ICON_NAMES.clock}
+                        />{" "}
+                        {notification.time}
+                      </Text>
+                    </Container>
+                    <Checkbox />
                   </Container>
-
-                  <Container paddingRight={10}>
-                    <Title
-                      variant={TITLE_VARIANTS.primary}
-                      weight={TITLE_WEIGHTS.heavy}
-                      color={TITLE_COLORS.primary}
-                      textAlign="left"
-                    >
-                      Your <b>Elite</b> author Graphic Optimization
-                      <span className="reward"> reward </span>
-                      is ready!
-                    </Title>
-                    <Text variant={TEXT_VARIANTS.secondary}>
-                      <i className="mdi mdi-clock-outline"></i> Just 30 sec ago
-                    </Text>
-                  </Container>
-                  <Checkbox />
-                </Container>
-              </Button>
-              <Button>
-                <Container
-                  variant={CONTAINER_VARIANTS.secondary}
-                  flex
-                  paddingRight={30}
-                >
-                  <Container paddingRight={16}>
-                    <Img
-                      src="./assets/images/avatar-2.jpeg"
-                      alt="Item"
-                      variant={IMG_VARIANTS.primary}
-                    />
-                  </Container>
-
-                  <Container paddingRight={10}>
-                    <Title
-                      variant={TITLE_VARIANTS.primary}
-                      weight={TITLE_WEIGHTS.heavy}
-                      color={TITLE_COLORS.primary}
-                      textAlign="left"
-                    >
-                      Angela Bernier
-                    </Title>
-                    <Text variant={TEXT_VARIANTS.secondary}>
-                      Answered to your comment on the cash flow forecast's graph
-                      🔔.
-                    </Text>
-
-                    <Text variant={TEXT_VARIANTS.secondary}>
-                      <i className="mdi mdi-clock-outline"></i> 48 min ago
-                    </Text>
-                  </Container>
-                  <Checkbox />
-                </Container>
-              </Button>
-              <Button>
-                <Container
-                  variant={CONTAINER_VARIANTS.secondary}
-                  flex
-                  paddingRight={30}
-                >
-                  <Container paddingRight={16}>
-                    <Icon background={ICON_BACKGROUND.success}>
-                      <i className="bx bx-message-square-dots"></i>
-                    </Icon>
-                  </Container>
-                  <Container paddingRight={10}>
-                    <Title
-                      variant={TITLE_VARIANTS.primary}
-                      weight={TITLE_WEIGHTS.heavy}
-                      color={TITLE_COLORS.primary}
-                      textAlign="left"
-                    >
-                      You have received
-                      <span className="success"> 20</span> new messages in the
-                      conversation
-                    </Title>
-                    <Text variant={TEXT_VARIANTS.secondary}>
-                      <i className="mdi mdi-clock-outline"></i> 2 hrs ago
-                    </Text>
-                  </Container>
-                  <Checkbox />
-                </Container>
-              </Button>
-              <Button>
-                <Container
-                  variant={CONTAINER_VARIANTS.secondary}
-                  flex
-                  paddingRight={30}
-                >
-                  <Container paddingRight={16}>
-                    <Img
-                      src="./assets/images/avatar-2.jpeg"
-                      alt="Item"
-                      variant={IMG_VARIANTS.primary}
-                    />
-                  </Container>
-                  <Container paddingRight={16}>
-                    <Title
-                      variant={TITLE_VARIANTS.primary}
-                      weight={TITLE_WEIGHTS.heavy}
-                      color={TITLE_COLORS.primary}
-                      textAlign="left"
-                    >
-                      Angela Bernier
-                    </Title>
-
-                    <Text variant={TEXT_VARIANTS.secondary}>
-                      Answered to your comment on the cash flow forecast's graph
-                      🔔.
-                    </Text>
-                    <Text variant={TEXT_VARIANTS.secondary}>
-                      <i className="mdi mdi-clock-outline"></i> 48 min ago
-                    </Text>
-                  </Container>
-                  <Checkbox />
-                </Container>
-              </Button>
+                </Button>
+              ))}
               <Container
                 paddingTop={10}
                 paddingBottom={10}
@@ -201,7 +177,10 @@ export const Notifications = () => {
                   flex
                 >
                   View All Notifications
-                  <i className="ri-arrow-right-line align-middle"></i>
+                  <Icon
+                    variant={ICON_VARIANTS.italic}
+                    name={ICON_NAMES.arrowRightBig}
+                  />
                 </Button>
               </Container>
             </Container>

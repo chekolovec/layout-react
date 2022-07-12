@@ -1,9 +1,40 @@
 import React from "react";
 import { useState } from "react";
-import { Button, BUTTON_VARIANTS } from "../Button";
-import { Container } from "../Container";
-import { Img, IMG_VARIANTS } from "../Img";
-import { ModalContainer } from "../ModalContainer";
+import { Button, BUTTON_VARIANTS } from "../../baseComponents/Button";
+import { Container } from "../../baseComponents/Container";
+import { Img, IMG_VARIANTS } from "../../baseComponents/Img";
+import { ModalContainer } from "../../baseComponents/ModalContainer";
+
+const LANGUAGES = [
+  {
+    title: "English",
+    img: "./assets/images/flag.svg",
+  },
+  {
+    title: "Española",
+    img: "./assets/images/spain.svg",
+  },
+  {
+    title: "Deutsche",
+    img: "./assets/images/germany.svg",
+  },
+  {
+    title: "Italiana",
+    img: "./assets/images/italy.svg",
+  },
+  {
+    title: "русский",
+    img: "./assets/images/russia.svg",
+  },
+  {
+    title: "中国人",
+    img: "./assets/images/china.svg",
+  },
+  {
+    title: "français",
+    img: "./assets/images/french.svg",
+  },
+];
 
 export const LanguageSelector = () => {
   const [modalShown, toggleModal] = useState(false);
@@ -22,48 +53,15 @@ export const LanguageSelector = () => {
         />
       </Button>
       <ModalContainer active={modalShown} width={160}>
-        <Button
-          imgSrc="./assets/images/flag.svg"
-          variant={BUTTON_VARIANTS.list}
-        >
-          English
-        </Button>
-        <Button
-          imgSrc="./assets/images/spain.svg"
-          variant={BUTTON_VARIANTS.list}
-        >
-          Española
-        </Button>
-        <Button
-          imgSrc="./assets/images/germany.svg"
-          variant={BUTTON_VARIANTS.list}
-        >
-          Deutsche
-        </Button>
-        <Button
-          imgSrc="./assets/images/italy.svg"
-          variant={BUTTON_VARIANTS.list}
-        >
-          Italiana
-        </Button>
-        <Button
-          imgSrc="./assets/images/russia.svg"
-          variant={BUTTON_VARIANTS.list}
-        >
-          русский
-        </Button>
-        <Button
-          imgSrc="./assets/images/china.svg"
-          variant={BUTTON_VARIANTS.list}
-        >
-          中国人
-        </Button>
-        <Button
-          imgSrc="./assets/images/french.svg"
-          variant={BUTTON_VARIANTS.list}
-        >
-          français
-        </Button>
+        {LANGUAGES.map((language) => (
+          <Button
+            key={language.title}
+            imgSrc={language.img}
+            variant={BUTTON_VARIANTS.list}
+          >
+            {language.title}
+          </Button>
+        ))}
       </ModalContainer>
     </Container>
   );

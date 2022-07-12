@@ -1,10 +1,31 @@
 import React from "react";
-import { Button, BUTTON_VARIANTS } from "../Button";
-import { Container, CONTAINER_VARIANTS } from "../Container";
-import { Text, TEXT_VARIANTS } from "../Text";
-import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
+import { Button, BUTTON_VARIANTS } from "../../baseComponents/Button";
+import { Container, CONTAINER_VARIANTS } from "../../baseComponents/Container";
+import { Text, TEXT_VARIANTS } from "../../baseComponents/Text";
+import {
+  Title,
+  TITLE_COLORS,
+  TITLE_VARIANTS,
+  TITLE_WEIGHTS,
+} from "../../baseComponents/Title";
 import "./styles.scss";
-import { Img } from "../Img";
+import { Img } from "../../baseComponents/Img";
+
+const SORT_BUTTONS = [
+  {
+    label: "All",
+  },
+  {
+    label: "1M",
+  },
+  {
+    label: "6M",
+  },
+  {
+    label: "1Y",
+    inactive: true,
+  },
+];
 
 export const RevenueGraph = () => {
   return (
@@ -28,26 +49,17 @@ export const RevenueGraph = () => {
           Revenue
         </Title>
         <Container flex>
-          <Container paddingLeft={3} paddingRight={3}>
-            <Button variant={BUTTON_VARIANTS.selector} uppercase>
-              All
-            </Button>
-          </Container>
-          <Container paddingLeft={3} paddingRight={3}>
-            <Button variant={BUTTON_VARIANTS.selector} uppercase>
-              1M
-            </Button>
-          </Container>
-          <Container paddingLeft={3} paddingRight={3}>
-            <Button variant={BUTTON_VARIANTS.selector} uppercase>
-              6M
-            </Button>
-          </Container>
-          <Container paddingLeft={3} paddingRight={3}>
-            <Button variant={BUTTON_VARIANTS.selector} inactive uppercase>
-              1Y
-            </Button>
-          </Container>
+          {SORT_BUTTONS.map((button) => (
+            <Container paddingLeft={3} paddingRight={3} key={button.label}>
+              <Button
+                variant={BUTTON_VARIANTS.selector}
+                uppercase
+                inactive={button.inactive}
+              >
+                {button.label}
+              </Button>
+            </Container>
+          ))}
         </Container>
       </Container>
       <Container flex>

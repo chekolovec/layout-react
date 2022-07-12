@@ -1,10 +1,122 @@
 import React from "react";
-import { Button } from "../Button";
-import { Container } from "../Container";
-import { Img } from "../Img";
+import { Button } from "../../baseComponents/Button";
+import { Container } from "../../baseComponents/Container";
+import { Img } from "../../baseComponents/Img";
 import { MenuSection } from "../MenuSection";
-import { Title, TITLE_VARIANTS } from "../Title";
+import { Title, TITLE_VARIANTS } from "../../baseComponents/Title";
 import "./styles.scss";
+import { Icon, ICON_NAMES, ICON_VARIANTS } from "../../baseComponents/Icon";
+
+const MENU_DATA = [
+  {
+    title: "Menu",
+    sections: [
+      {
+        name: "Dashboard",
+        active: true,
+        open: true,
+        iconName: ICON_NAMES.dashboard,
+        sections: [
+          {
+            title: "Analytics",
+          },
+          {
+            title: "CRM",
+          },
+          {
+            title: "Ecommerce",
+          },
+          {
+            title: "Crypto",
+          },
+          {
+            title: "Projects",
+          },
+        ],
+      },
+      {
+        name: "Apps",
+        iconName: ICON_NAMES.apps,
+        sections: [],
+      },
+      {
+        name: "Layouts",
+        iconName: ICON_NAMES.layout,
+        sections: [],
+      },
+    ],
+  },
+  {
+    title: "Pages",
+    sections: [
+      {
+        name: "Authentication",
+        iconName: ICON_NAMES.accountMenu,
+        sections: [],
+      },
+      {
+        name: "Pages",
+        iconName: ICON_NAMES.pages,
+        sections: [],
+      },
+      {
+        name: "Landing",
+        iconName: ICON_NAMES.rocket,
+        sections: [],
+      },
+    ],
+  },
+  {
+    title: "Components",
+    sections: [
+      {
+        name: "Base UI",
+        iconName: ICON_NAMES.pencil,
+        sections: [],
+      },
+      {
+        name: "Advance UI",
+        iconName: ICON_NAMES.stack,
+        sections: [],
+      },
+      {
+        name: "Widgets",
+        iconName: ICON_NAMES.honour,
+        sections: [],
+      },
+      {
+        name: "Forms",
+        iconName: ICON_NAMES.fileList,
+        sections: [],
+      },
+      {
+        name: "Tables",
+        iconName: ICON_NAMES.layourGrid,
+        sections: [],
+      },
+      {
+        name: "Charts",
+        iconName: ICON_NAMES.pieChart,
+        sections: [],
+      },
+      {
+        name: "Icons",
+        iconName: ICON_NAMES.compasses,
+        sections: [],
+      },
+      {
+        name: "Maps",
+        iconName: ICON_NAMES.mapPin,
+        sections: [],
+      },
+      {
+        name: "Multi level",
+        iconName: ICON_NAMES.share,
+        sections: [],
+      },
+    ],
+  },
+];
 
 export const Menu = () => {
   return (
@@ -28,92 +140,26 @@ export const Menu = () => {
         </Button>
       </Container>
       <Container scroll flex column paddingBottom={20}>
-        <Title variant={TITLE_VARIANTS.menu}>Menu</Title>
-        <MenuSection
-          active
-          open
-          name="Dashboard"
-          iconLeft={<i className="ri-dashboard-2-line"></i>}
-          items={[
-            { title: "Analytics" },
-            { title: "CRM" },
-            { title: "Ecommerce" },
-            { title: "Crypto" },
-            { title: "Projects" },
-          ]}
-        />
-        <MenuSection
-          name="Apps"
-          iconLeft={<i className="ri-apps-line"></i>}
-          items={[]}
-        />
-        <MenuSection
-          name="Layouts"
-          iconLeft={<i className="ri-layout-line"></i>}
-          items={[]}
-        />
-        <Title variant={TITLE_VARIANTS.menu}>Pages</Title>
-        <MenuSection
-          name="Authentication"
-          iconLeft={<i className="ri-account-circle-line"></i>}
-          items={[]}
-        />
-        <MenuSection
-          name="Pages"
-          iconLeft={<i className="ri-pages-line"></i>}
-          items={[]}
-        />
-        <MenuSection
-          name="Landing"
-          iconLeft={<i className="ri-rocket-line"></i>}
-          items={[]}
-        />
-        <Title variant={TITLE_VARIANTS.menu}>Components</Title>
-        <MenuSection
-          name="Base UI"
-          iconLeft={<i className="ri-pencil-ruler-2-line"></i>}
-          items={[]}
-        />
-        <MenuSection
-          name="Advance UI"
-          iconLeft={<i className="ri-stack-line"></i>}
-          items={[]}
-        />
-        <MenuSection
-          name="Widgets"
-          iconLeft={<i className="ri-honour-line"></i>}
-          items={[]}
-        />
-        <MenuSection
-          name="Forms"
-          iconLeft={<i className="ri-file-list-3-line"></i>}
-          items={[]}
-        />
-        <MenuSection
-          name="Tables"
-          iconLeft={<i className="ri-layout-grid-line"></i>}
-          items={[]}
-        />
-        <MenuSection
-          name="Charts"
-          iconLeft={<i className="ri-pie-chart-line"></i>}
-          items={[]}
-        />
-        <MenuSection
-          name="Icons"
-          iconLeft={<i className="ri-compasses-2-line"></i>}
-          items={[]}
-        />
-        <MenuSection
-          name="Maps"
-          iconLeft={<i className="ri-map-pin-line"></i>}
-          items={[]}
-        />
-        <MenuSection
-          name="Multi level"
-          iconLeft={<i className="ri-share-line"></i>}
-          items={[]}
-        />
+        {MENU_DATA.map((item) => (
+          <Container flex column key={item.title}>
+            <Title variant={TITLE_VARIANTS.menu}>{item.title}</Title>
+            {item.sections.map((section) => (
+              <MenuSection
+                key={section.name}
+                active={section.active}
+                open={section.open}
+                name={section.name}
+                iconLeft={
+                  <Icon
+                    variant={ICON_VARIANTS.italic}
+                    name={section.iconName}
+                  />
+                }
+                items={section.sections}
+              />
+            ))}
+          </Container>
+        ))}
       </Container>
     </Container>
   );

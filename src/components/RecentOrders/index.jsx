@@ -1,14 +1,19 @@
 import React from "react";
-import { Button, BUTTON_VARIANTS } from "../Button";
-import { Container, CONTAINER_VARIANTS } from "../Container";
+import { Button, BUTTON_VARIANTS } from "../../baseComponents/Button";
+import { Container, CONTAINER_VARIANTS } from "../../baseComponents/Container";
 import { OrdersItem } from "../OrdersItem";
-import { Table } from "../Table";
-import { Tbody } from "../Tbody";
-import { Th } from "../Th";
-import { Thead } from "../Thead";
-import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
-import { Tr } from "../Tr";
-import "./styles.scss";
+import { Table } from "../../baseComponents/Table";
+import { Tbody } from "../../baseComponents/Tbody";
+import { Th } from "../../baseComponents/Th";
+import { Thead } from "../../baseComponents/Thead";
+import {
+  Title,
+  TITLE_COLORS,
+  TITLE_VARIANTS,
+  TITLE_WEIGHTS,
+} from "../../baseComponents/Title";
+import { Tr } from "../../baseComponents/Tr";
+import { Icon, ICON_NAMES, ICON_VARIANTS } from "../../baseComponents/Icon";
 
 const DATA = [
   {
@@ -70,10 +75,7 @@ const DATA = [
 
 export const RecentOrders = () => {
   return (
-    <Container
-      variant={CONTAINER_VARIANTS.contentSection}
-      className="recent-orders"
-    >
+    <Container variant={CONTAINER_VARIANTS.contentSection}>
       <Container
         variant={CONTAINER_VARIANTS.default}
         flex
@@ -90,12 +92,14 @@ export const RecentOrders = () => {
         </Title>
         <Button
           variant={BUTTON_VARIANTS.secondary}
-          iconLeft={<i className="ri-file-list-3-line align-middle"></i>}
+          iconLeft={
+            <Icon variant={ICON_VARIANTS.italic} name={ICON_NAMES.file} />
+          }
         >
           Generate Report
         </Button>
       </Container>
-      <Container width100 flex1 className="table-container">
+      <Container width100 flex1>
         <Table>
           <Thead>
             <Tr>

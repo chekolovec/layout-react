@@ -1,7 +1,8 @@
 import React from "react";
-import { Container, CONTAINER_VARIANTS } from "../Container";
-import { Img, IMG_VARIANTS } from "../Img";
-import { Text, TEXT_VARIANTS } from "../Text";
+import { Container, CONTAINER_VARIANTS } from "../../baseComponents/Container";
+import { Img, IMG_VARIANTS } from "../../baseComponents/Img";
+import { Text, TEXT_VARIANTS } from "../../baseComponents/Text";
+import { Stars } from "../Stars";
 import "./styles.scss";
 
 export const ProductReview = ({ name, text, score, img, index }) => {
@@ -18,17 +19,7 @@ export const ProductReview = ({ name, text, score, img, index }) => {
           {text}
         </Text>
         <Container flex className="item-rating">
-          {Array(5)
-            .fill()
-            .map((_, index) => {
-              if (score - index * 2 > 1) {
-                return <i className="ri-star-fill" key={index}></i>;
-              }
-              if (score - index * 2 === 1) {
-                return <i className="ri-star-half-fill" key={index}></i>;
-              }
-              return <i className="ri-star-line" key={index}></i>;
-            })}
+          <Stars score={score} />
         </Container>
         <Text variant={TEXT_VARIANTS.secondary} className="item-author">
           - by <i>{name}</i>

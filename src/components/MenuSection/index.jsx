@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import { Button, BUTTON_VARIANTS } from "../Button";
-import { Container } from "../Container";
+import { Button, BUTTON_VARIANTS } from "../../baseComponents/Button";
+import { Container } from "../../baseComponents/Container";
+import { Icon, ICON_NAMES, ICON_VARIANTS } from "../../baseComponents/Icon";
 import styles from "./styles.module.scss";
 
 export const MenuSection = ({ active, open, items, name, iconLeft }) => {
@@ -14,9 +15,9 @@ export const MenuSection = ({ active, open, items, name, iconLeft }) => {
         active={active}
         iconRight={
           menuOpen ? (
-            <i className="ri-arrow-down-s-line"></i>
+            <Icon variant={ICON_VARIANTS.italic} name={ICON_NAMES.arrowDown} />
           ) : (
-            <i className="ri-arrow-right-s-line"></i>
+            <Icon variant={ICON_VARIANTS.italic} name={ICON_NAMES.arrowRight} />
           )
         }
         variant={BUTTON_VARIANTS.menuTitle}

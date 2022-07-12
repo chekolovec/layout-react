@@ -1,6 +1,6 @@
 import React from "react";
-import { Container } from "../Container";
-import { Text, TEXT_VARIANTS } from "../Text";
+import { Container } from "../../baseComponents/Container";
+import { Text, TEXT_VARIANTS } from "../../baseComponents/Text";
 import "./styles.scss";
 
 export const Footer = () => {

@@ -1,16 +1,27 @@
 import React from "react";
-import { Container, CONTAINER_VARIANTS } from "../Container";
+import { Container, CONTAINER_VARIANTS } from "../../baseComponents/Container";
 import { ProductReview } from "../ProductReview";
 import { RecentActivityItem } from "../RecentActivityItem";
-import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
-import { Text, TEXT_VARIANTS } from "../Text";
+import {
+  Title,
+  TITLE_COLORS,
+  TITLE_VARIANTS,
+  TITLE_WEIGHTS,
+} from "../../baseComponents/Title";
+import { Text, TEXT_VARIANTS } from "../../baseComponents/Text";
 import "./styles.scss";
-import { Icon, ICON_BACKGROUND, ICON_VARIANTS } from "../Icon";
-import { Img, IMG_VARIANTS } from "../Img";
-import { Button, BUTTON_VARIANTS } from "../Button";
-import { Span } from "../Span";
-import { Ol } from "../Ol";
-import { Li } from "../Li";
+import {
+  Icon,
+  ICON_BACKGROUND,
+  ICON_NAMES,
+  ICON_VARIANTS,
+} from "../../baseComponents/Icon";
+import { Img, IMG_VARIANTS } from "../../baseComponents/Img";
+import { Button, BUTTON_VARIANTS } from "../../baseComponents/Button";
+import { Span } from "../../baseComponents/Span";
+import { Ol } from "../../baseComponents/Ol";
+import { Li } from "../../baseComponents/Li";
+import { Stars } from "../Stars";
 
 const CUSTOMER_REVIEW_COLORS = {
   success: "success",
@@ -30,7 +41,7 @@ const RECENT_ACTIVITY_DATA = [
         variant={ICON_VARIANTS.secondary}
         background={ICON_BACKGROUND.earning}
       >
-        <i className="ri-shopping-cart-2-line"></i>
+        <Icon variant={ICON_VARIANTS.italic} name={ICON_NAMES.shopping} />
       </Icon>
     ),
   },
@@ -81,7 +92,7 @@ const RECENT_ACTIVITY_DATA = [
         variant={ICON_VARIANTS.secondary}
         background={ICON_BACKGROUND.success}
       >
-        <i className="ri-stack-fill"></i>
+        <Icon variant={ICON_VARIANTS.italic} name={ICON_NAMES.stackFill} />
       </Icon>
     ),
   },
@@ -123,7 +134,7 @@ const RECENT_ACTIVITY_DATA = [
         variant={ICON_VARIANTS.secondary}
         background={ICON_BACKGROUND.offer}
       >
-        <i className="mdi mdi-sale fs-14"></i>
+        <Icon variant={ICON_VARIANTS.italic} name={ICON_NAMES.sale} />
       </Icon>
     ),
   },
@@ -140,7 +151,7 @@ const RECENT_ACTIVITY_DATA = [
         variant={ICON_VARIANTS.secondary}
         background={ICON_BACKGROUND.success}
       >
-        <i className="ri-bookmark-fill"></i>
+        <Icon variant={ICON_VARIANTS.italic} name={ICON_NAMES.bookmark} />
       </Icon>
     ),
   },
@@ -160,7 +171,7 @@ const RECENT_ACTIVITY_DATA = [
         variant={ICON_VARIANTS.secondary}
         background={ICON_BACKGROUND.offer}
       >
-        <i className="mdi mdi-sale fs-14"></i>
+        <Icon variant={ICON_VARIANTS.italic} name={ICON_NAMES.sale} />
       </Icon>
     ),
   },
@@ -184,7 +195,7 @@ const RECENT_ACTIVITY_DATA = [
         variant={ICON_VARIANTS.secondary}
         background={ICON_BACKGROUND.report}
       >
-        <i className="ri-line-chart-line"></i>
+        <Icon variant={ICON_VARIANTS.italic} name={ICON_NAMES.chart} />
       </Icon>
     ),
   },
@@ -328,6 +339,7 @@ export const RightBar = () => {
       <Span className="line-score">{amount}</Span>
     </Container>
   );
+
   return (
     <Container width={280} paddingRight={0} className="rightbar">
       <Container
@@ -417,11 +429,7 @@ export const RightBar = () => {
           spaceBetween
         >
           <Container flex alignCenter className="stars-container">
-            <i className="ri-star-fill"></i>
-            <i className="ri-star-fill"></i>
-            <i className="ri-star-fill"></i>
-            <i className="ri-star-fill"></i>
-            <i className="ri-star-half-fill"></i>
+            <Stars score={9} />
           </Container>
           <Span className="stars-total">4.5 out of 5</Span>
         </Container>
@@ -477,7 +485,7 @@ export const RightBar = () => {
               height100
               className="invite-icon-container"
             >
-              <i className="ri-mail-fill label-icon align-middle rounded-pill fs-16 me-2"></i>
+              <Icon variant={ICON_VARIANTS.italic} name={ICON_NAMES.mailFill} />
             </Container>
             <Text className="invite-button-text">Invite now</Text>
           </Button>

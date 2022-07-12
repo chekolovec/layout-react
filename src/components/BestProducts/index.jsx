@@ -1,11 +1,17 @@
 import React from "react";
 import { BestProductsItem } from "../BestProductsItem";
-import { Button, BUTTON_VARIANTS } from "../Button";
-import { Container, CONTAINER_VARIANTS } from "../Container";
+import { Button, BUTTON_VARIANTS } from "../../baseComponents/Button";
+import { Container, CONTAINER_VARIANTS } from "../../baseComponents/Container";
 import { Pagination } from "../Pagination";
-import { Text, TEXT_VARIANTS } from "../Text";
-import { Title, TITLE_COLORS, TITLE_VARIANTS, TITLE_WEIGHTS } from "../Title";
+import { Text, TEXT_VARIANTS } from "../../baseComponents/Text";
+import {
+  Title,
+  TITLE_COLORS,
+  TITLE_VARIANTS,
+  TITLE_WEIGHTS,
+} from "../../baseComponents/Title";
 import "./styles.scss";
+import { Icon, ICON_NAMES, ICON_VARIANTS } from "../../baseComponents/Icon";
 
 const PRODUCTS = [
   {
@@ -72,7 +78,10 @@ export const BestProducts = () => {
           </Text>
           <Text variant={TEXT_VARIANTS.small} className="sort-text">
             Today
-            <i className="mdi mdi-chevron-down ms-1"></i>
+            <Icon
+              variant={ICON_VARIANTS.italic}
+              name={ICON_NAMES.chevronDown}
+            />
           </Text>
         </Button>
       </Container>

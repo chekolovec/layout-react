@@ -1,16 +1,16 @@
 import React from "react";
-import { Button, BUTTON_VARIANTS } from "../Button";
+import { Button, BUTTON_VARIANTS } from "../../baseComponents/Button";
 import {
   ColoredText,
   COLORED_TEXT_COLORS,
   COLORED_TEXT_VARIANTS,
-} from "../ColoredText";
-import { Container } from "../Container";
-import { Img, IMG_VARIANTS } from "../Img";
-import { Span, SPAN_VARIANTS } from "../Span";
-import { Td } from "../Td";
-import { Text, TEXT_COLORS } from "../Text";
-import { Tr } from "../Tr";
+} from "../../baseComponents/ColoredText";
+import { Container } from "../../baseComponents/Container";
+import { Img, IMG_VARIANTS } from "../../baseComponents/Img";
+import { Span, SPAN_VARIANTS } from "../../baseComponents/Span";
+import { Td } from "../../baseComponents/Td";
+import { Text, TEXT_COLORS } from "../../baseComponents/Text";
+import { Tr } from "../../baseComponents/Tr";
 import "./styles.scss";
 
 const STATUS_CLASSES = {

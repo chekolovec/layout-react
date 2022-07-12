@@ -1,8 +1,13 @@
 import React from "react";
-import { Button } from "../Button";
-import { Container, CONTAINER_VARIANTS } from "../Container";
-import { Text, TEXT_VARIANTS } from "../Text";
-import { Title, TITLE_COLORS, TITLE_VARIANTS } from "../Title";
+import { Button } from "../../baseComponents/Button";
+import { Container, CONTAINER_VARIANTS } from "../../baseComponents/Container";
+import { Icon, ICON_NAMES, ICON_VARIANTS } from "../../baseComponents/Icon";
+import { Text, TEXT_VARIANTS } from "../../baseComponents/Text";
+import {
+  Title,
+  TITLE_COLORS,
+  TITLE_VARIANTS,
+} from "../../baseComponents/Title";
 import "./styles.scss";
 
 export const Breadcrumbs = ({ mainRoute, secondaryRoutes = [] }) => {
@@ -26,7 +31,11 @@ export const Breadcrumbs = ({ mainRoute, secondaryRoutes = [] }) => {
         <Button className="breadcrumbs-main">{mainRoute}</Button>
         {secondaryRoutes.map((route) => (
           <Container flex key={route}>
-            <i className="ri-arrow-right-s-line breadcrumbs-arrow"></i>
+            <Icon
+              variant={ICON_VARIANTS.italic}
+              name={ICON_NAMES.arrowRight}
+              className="breadcrumbs-arrow"
+            />
             <Text variant={TEXT_VARIANTS.small} className="breadcrumbs-second">
               {route}
             </Text>

@@ -1,7 +1,7 @@
 import React from "react";
-import { Button, BUTTON_VARIANTS } from "../Button";
-import { Container, CONTAINER_VARIANTS } from "../Container";
-import { Text, TEXT_VARIANTS } from "../Text";
+import { Button, BUTTON_VARIANTS } from "../../baseComponents/Button";
+import { Container, CONTAINER_VARIANTS } from "../../baseComponents/Container";
+import { Text, TEXT_VARIANTS } from "../../baseComponents/Text";
 
 export const Pagination = ({ itemsNumber, totalNumber, current, last }) => {
   return (
